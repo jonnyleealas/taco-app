@@ -13,22 +13,22 @@ const SignOn = () => {
                 <div>
                     Name
                 </div>
-                <input type="text" placeholder=" Name"></input>
+                <input className='input-bar' type="text" placeholder=" Name"></input>
             </div>
             <div>
                 <div>
                     Email
                 </div>
-                <input type='text' placeholder=" Email"></input>
+                <input className='input-bar' type='text' placeholder=" Email"></input>
             </div>
             <div>
                 <div>
                     Password
                 </div>
-                <input type="text" placeholder=" Password"></input>
+                <input className='input-bar' type="text" placeholder=" Password"></input>
             </div>
             <div>
-                <button>Sign Up</button>
+                <button className='input-bar'>Sign Up</button>
             </div>
         </div>
     )
