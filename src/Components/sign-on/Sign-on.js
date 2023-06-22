@@ -1,5 +1,5 @@
 import './sign-on.css'
-
+import tacoImage from '../sign-on/images/tacoImage.jpg'
 const SignOn = () => {
     return (
         <div className="sign-on-card">
@@ -43,7 +43,7 @@ const SignOn = () => {
             <div>
                 <button className='input-bar'>Sign Up</button>
             </div>
-
+            <img className='taco-pic' src={tacoImage} alt='tacos' />
         </div>
     )
 }
