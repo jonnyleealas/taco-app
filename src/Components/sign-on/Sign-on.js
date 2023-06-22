@@ -3,11 +3,14 @@ import './sign-on.css'
 const SignOn = () => {
     return (
         <div className="sign-on-card">
-            <h1>
-                Create your account
-            </h1>
             <div>
-                Or
+
+                <h1>
+                    Create your account
+                </h1>
+                <p>
+                    Let's get started with your 30 days free trial
+                </p>
             </div>
             <div>
                 <div>
@@ -27,9 +30,20 @@ const SignOn = () => {
                 </div>
                 <input className='input-bar' type="text" placeholder=" Password"></input>
             </div>
+            <div className='check-box'>
+                <span>
+                    <input type="checkbox" checked="checked"></input>
+                </span>
+                <span>
+                    <p>
+                        I agree to all Term, Privacy Policy and Fees
+                    </p>
+                </span>
+            </div>
             <div>
                 <button className='input-bar'>Sign Up</button>
             </div>
+
         </div>
     )
 }
