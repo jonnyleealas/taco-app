@@ -3,13 +3,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    margin-right: 30px;
+
+    /* border-style: solid;
+    border-color: black; */
+
+
 }
 
 .input-bar {
-    border-radius: 10px;
+    border-radius: 20px;
     border-style: solid;
     border-width: thin;
     border-color: rgb(213, 206, 206);
+    width: 300px;
+    height: 30px;
+    
+    margin-bottom: 1em;
 }
 
 .check-box {
@@ -24,3 +35,4 @@
     width: 300px;
     
 }
+
