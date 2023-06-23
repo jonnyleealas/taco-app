@@ -11,7 +11,10 @@ const SignOn = () => {
                 <p>
                     Let's get started with your 30 days free trial
                 </p>
-                <hr color='#EFEFEF'></hr>
+             
+
+                <hr className='hr-text' color='#EFEFEF' data-content='or'></hr>
+    
             </div>
             <div>
                 <div className='name'>
