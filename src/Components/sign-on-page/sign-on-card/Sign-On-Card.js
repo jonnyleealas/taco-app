@@ -11,8 +11,9 @@ const SignOn = () => {
                 <p>
                     Let's get started with your 30 days free trial
                 </p>
-             
+                
 
+            <input className='input-bar' type="text" placeholder=" Google"></input>
                 <hr className='hr-text' color='#EFEFEF' data-content='or'></hr>
     
             </div>
