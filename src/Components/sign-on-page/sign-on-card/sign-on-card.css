@@ -12,16 +12,21 @@
 
 }
 
-.input-bar {
+.name {
+    margin-bottom: .5em;
+}
+
+.input-bar{
     border-radius: 20px;
     border-style: solid;
     border-width: thin;
     border-color: rgb(213, 206, 206);
-    width: 300px;
-    height: 30px;
+    width: 325px;
+    height: 35px;
     
     margin-bottom: 1em;
 }
+
 
 .check-box {
     display: flex;
@@ -29,10 +34,14 @@
     justify-content: center;
     align-items: center;
 
+    font-size: 13px;
+
 }
 
 .taco-pic {
     width: 300px;
     
 }
+
+
 

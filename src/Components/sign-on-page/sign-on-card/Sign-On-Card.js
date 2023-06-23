@@ -11,21 +11,22 @@ const SignOn = () => {
                 <p>
                     Let's get started with your 30 days free trial
                 </p>
+                <hr color='#EFEFEF'></hr>
             </div>
             <div>
-                <div>
+                <div className='name'>
                     Name
                 </div>
                 <input className='input-bar' type="text" placeholder=" Name"></input>
             </div>
             <div>
-                <div>
+                <div className='name'>
                     Email
                 </div>
                 <input className='input-bar' type='text' placeholder=" Email"></input>
             </div>
             <div>
-                <div>
+                <div className='name'>
                     Password
                 </div>
                 <input className='input-bar' type="text" placeholder=" Password"></input>
