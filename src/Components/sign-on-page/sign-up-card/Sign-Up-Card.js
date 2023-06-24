@@ -1,8 +1,8 @@
-import './sign-on-card.css'
-import tacoImage from '../images/tacoImage.jpg'
+import './sign-up-card.css'
+
 const SignOn = () => {
     return (
-        <div className="sign-on-card">
+        <div className="sign-up-card">
             <div>
 
                 <h1>
