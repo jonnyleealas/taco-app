@@ -23,6 +23,8 @@
     height: 35px;
     
     margin-bottom: 1em;
+
+    
 }
 
 input {
@@ -45,12 +47,18 @@ input {
 }
 
 .check {
-    grid-area: check ;
     
+    grid-area: check ;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
+    margin-top: .6em;
+
+    
 }
+
 
 .remember {
     grid-area: remember;
