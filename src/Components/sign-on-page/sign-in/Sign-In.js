@@ -38,7 +38,7 @@ const SignUp = () => {
             </span>
             </div>
             <div>
-                <button className='input-bar'>Login</button>
+                <button className='input-bar login-button'>Login</button>
             </div>
         </div>
     )

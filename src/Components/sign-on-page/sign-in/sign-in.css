@@ -77,3 +77,8 @@
     justify-content: end;
     align-items: center;
 }
+
+.login-button {
+    background-color: rgb(59, 180, 152);
+    color: white;
+}
