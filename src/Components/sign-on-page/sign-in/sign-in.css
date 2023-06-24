@@ -31,9 +31,7 @@
     
 }
 
-input {
-    width: ;
-}
+
 
 .login-check-box {
     margin-left: 1em;
@@ -58,7 +56,9 @@ input {
     justify-content: center;
     align-items: center;
 
-    margin-top: .6em;
+    margin-top: .5em;
+    margin-bottom: .5em;
+
 
     
 }
