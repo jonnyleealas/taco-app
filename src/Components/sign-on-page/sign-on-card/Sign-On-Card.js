@@ -13,7 +13,7 @@ const SignOn = () => {
                 </p>
                 
 
-            <input className='input-bar' type="text" placeholder=" Google"></input>
+            <input className='input-bar' type="text" placeholder="  Google"></input>
                 <hr className='hr-text' data-content='or'></hr>
     
             </div>
@@ -21,19 +21,19 @@ const SignOn = () => {
                 <div className='name'>
                     Name
                 </div>
-                <input className='input-bar' type="text" placeholder=" Name"></input>
+                <input className='input-bar' type="text" placeholder="  Name"></input>
             </div>
             <div>
                 <div className='name'>
                     Email
                 </div>
-                <input className='input-bar' type='text' placeholder=" Email"></input>
+                <input className='input-bar' type='text' placeholder="  Email"></input>
             </div>
             <div>
                 <div className='name'>
                     Password
                 </div>
-                <input className='input-bar' type="text" placeholder=" Password"></input>
+                <input className='input-bar' type="text" placeholder="  Password"></input>
             </div>
             <div className='check-box'>
                 <span>
