@@ -8,7 +8,7 @@ const SignOn = () => {
                 <h1>
                     Create your account
                 </h1>
-                <p>
+                <p className='free-trial'>
                     Let's get started with your 30 days free trial
                 </p>
                 
@@ -48,7 +48,9 @@ const SignOn = () => {
             <div>
                 <button className='input-bar'>Sign Up</button>
             </div>
-        
+            <div>
+                Already have an account? Log In -link-
+            </div>
         </div>
     )
 }
