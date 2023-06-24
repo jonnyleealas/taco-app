@@ -1,6 +1,6 @@
 .sign-in-card {
-    width: 300px;
-    height: 400px;
+    width: 350px;
+    height: 450px;
 
     border-style: solid;
     border-color: grey;
@@ -8,8 +8,11 @@
 }
 
 .login-check-box {
+    margin-left: 1em;
+    margin-right: 1em;
+
     display: grid;
-    width: 100%;
+ 
     grid-template-areas:
     'check remember forgot forgot'
     ;
@@ -21,12 +24,20 @@
 
 .check {
     grid-area: check ;
+    display: flex;
+    justify-content: center;
 }
 
 .remember {
     grid-area: remember;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 .forgot {
     grid-area: forgot;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
