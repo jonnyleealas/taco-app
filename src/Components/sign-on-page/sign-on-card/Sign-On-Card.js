@@ -14,7 +14,7 @@ const SignOn = () => {
                 
 
             <input className='input-bar' type="text" placeholder=" Google"></input>
-                <hr className='hr-text' color='#EFEFEF' data-content='or'></hr>
+                <hr className='hr-text' data-content='or'></hr>
     
             </div>
             <div>
