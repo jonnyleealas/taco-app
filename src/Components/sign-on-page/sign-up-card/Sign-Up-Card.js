@@ -13,7 +13,7 @@ const SignOn = () => {
                 </p>
                 
 
-            <input className='input-bar' type="text" placeholder="  Google"></input>
+            <input className='input-bar' type="text" placeholder="                                Login with Google"></input>
                 <hr className='hr-text' data-content='or'></hr>
     
             </div>

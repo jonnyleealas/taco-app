@@ -7,9 +7,9 @@ import './login-page.css'
 const signOnPage = () => {
     return (
         <div className='sign-on-page'>
-            {/* <SignUp /> */}
-            {/* <img className='taco-image' src={tacoPic} alt='tacos' /> */}
-            <SignIn />
+            <SignUp />
+            <img className='taco-image' src={tacoPic} alt='tacos' />
+            {/* <SignIn /> */}
         </div>
     )
 }
