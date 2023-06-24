@@ -37,6 +37,9 @@ const SignUp = () => {
                 Forgot Password
             </span>
             </div>
+            <div>
+                <button className='input-bar'>Login</button>
+            </div>
         </div>
     )
 }
