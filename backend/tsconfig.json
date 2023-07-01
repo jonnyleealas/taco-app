@@ -1,0 +1,20 @@
+{
+  "display": "Node LTS",
+  "_version": "18.1.0",
+  "compilerOptions": {
+    "lib": [
+      "es2023"
+    ],
+    "allowJs": true,
+    "outDir": "build",                 
+    "rootDir": "src",
+    "noImplicitAny": true, 
+    "module": "Node16",
+    "target": "es2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node16"
+  }
+}
