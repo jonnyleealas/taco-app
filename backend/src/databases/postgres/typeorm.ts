@@ -1,11 +1,11 @@
-import { DataSource, EntityTarget, ObjectLiteral, Repository } from 'typeorm';
+import { DataSource, EntityTarget, ObjectLiteral, Repository } from "typeorm";
 
 let typeORMDB: DataSource;
 
 export default async function typeORMConnect(): Promise<void> {
 
   const dataSource = new DataSource({
-    type: 'postgres',
+    type: "postgres",
     url: process.env.PGSQL_URI,
     entities: [
       `${__dirname}/entity/*.entity.js`,
@@ -22,7 +22,7 @@ export function useTypeORM(
   entity: EntityTarget<ObjectLiteral>
 ): Repository<ObjectLiteral> {
   if (!typeORMDB) {
-    throw new Error('TypeORM has not been initialized!');
+    throw new Error("TypeORM has not been initialized!");
   }
 
   return typeORMDB.getRepository(entity);

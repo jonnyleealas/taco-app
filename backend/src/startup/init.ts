@@ -1,5 +1,5 @@
-import { Express } from 'express';
-import typeORMConnect from '../databases/postgres/typeorm';
+import { Express } from "express";
+import typeORMConnect from "../databases/postgres/typeorm";
 const appSetup = async (app: Express) => {
   // set database connections
   try {
@@ -7,7 +7,7 @@ const appSetup = async (app: Express) => {
       typeORMConnect(),
     ]);
 
-    console.log('Databases connected successfully!');
+    console.log("Databases connected successfully!");
     const APP_PORT = Number(process.env.APP_PORT) || 3000;
 
     app.listen(APP_PORT, () => {
@@ -15,10 +15,10 @@ const appSetup = async (app: Express) => {
     });
 
   } catch (error: unknown) {
-    console.log('Unable to start the app!');
+    console.log("Unable to start the app!");
     console.error(error);
   }
-      
+
 };
 
 

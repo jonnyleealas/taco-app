@@ -24,6 +24,8 @@
 	  "@typescript-eslint/no-misused-promises": 0,
 	  "@typescript-eslint/no-floating-promises": 1,
 	  "@typescript-eslint/no-var-requires": 1,
+	  "quotes": "off",
+	  "@typescript-eslint/quotes": "error",
 	  "eol-last": 2,
 	  "max-len": [
 		"error",
@@ -35,14 +37,6 @@
 		  "ignoreTemplateLiterals": true
 		}
 	  ],
-	  "no-trailing-spaces": "error",
-	  "quotes": [
-		2,
-		"single",
-		{
-		  "avoidEscape": true,
-		  "allowTemplateLiterals": true
-		}
-	  ]
+	  "no-trailing-spaces": "error"
 	}
   }
