@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 import UserInterface from "../models/user";
 
-@Entity()
+@Entity("users")
 export class UserEntity implements UserInterface {
   @PrimaryGeneratedColumn()
   id!: number;
@@ -11,7 +11,4 @@ export class UserEntity implements UserInterface {
 
   @Column()
   lastName!: string;
-
-  @Column()
-  password!: string;
 }

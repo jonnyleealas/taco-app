@@ -8,7 +8,6 @@ export default async function typeORMConnect(): Promise<void> {
     type: "postgres",
     url: process.env.PGSQL_URI,
     entities: [
-      `${__dirname}/entity/*.entity.js`,
       `${__dirname}/entity/*.entity.ts`
     ],
     synchronize: true,
