@@ -1,3 +1,4 @@
+import React from 'react'
 import './sign-up-card.css'
 
 const SignOn = () => {
