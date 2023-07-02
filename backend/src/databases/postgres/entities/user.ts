@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 import UserInterface from "../models/user";
 
 @Entity("users")
-export class UserEntity implements UserInterface {
+export default class UserEntity implements UserInterface {
   @PrimaryGeneratedColumn()
   id!: number;
 

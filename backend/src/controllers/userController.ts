@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { useTypeORM } from "../databases/postgres/typeorm";
-import { UserEntity } from "../databases/postgres/entities/user";
+import UserEntity from "../databases/postgres/entities/user";
 import { DataSource, ObjectLiteral } from "typeorm";
 import PostUserRequest from "../databases/postgres/models/postUserRequest";
 import ErrorObject from "../databases/postgres/models/errorObject";

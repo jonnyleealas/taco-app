@@ -18,8 +18,8 @@ export default async function typeORMConnect(): Promise<void> {
 
 // Executes TypeORM query for the provided entity model
 export function useTypeORM(
-  entity: EntityTarget<ObjectLiteral>
-): Repository<ObjectLiteral> {
+  entity: EntityTarget<ObjectLiteral>): Repository<ObjectLiteral> {
+
   if (!typeORMDB) {
     throw new Error("TypeORM has not been initialized!");
   }
