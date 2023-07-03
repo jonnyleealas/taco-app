@@ -14,9 +14,6 @@ const Profile = () => {
             <LogOutButton />
         </article>
         )
-        
-
-        
     )
 }
 

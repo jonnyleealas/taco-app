@@ -6,11 +6,6 @@
 
     margin-right: 6em;
     margin-bottom: 4em;
-
-    
-  
-    
-
 }
 
 .free-trial{
@@ -42,12 +37,10 @@
     align-items: center;
 
     font-size: 13px;
-
 }
 
 .taco-pic {
-    width: 300px;
-    
+    width: 300px;   
 }
 
 .hr-text {
