@@ -11,7 +11,7 @@ const Profile = () => {
             <article>
             <h1>{user.name}</h1>
             <p>Access has been granted</p>
-            {/* {JSON.stringify(user)} */}
+          
             <LogOutButton />
         </article>
         )
