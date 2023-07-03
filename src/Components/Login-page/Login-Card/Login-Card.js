@@ -4,38 +4,38 @@ import LoginButton from './LoginButton'
 
 const Login = () => {
     return (
-        <div className="sign-up-card">
+        <div className="signin-card">
             <div>
                 <h1>
-                    Create your account
+                    Welcome to the Taco App
                 </h1>
                 <p className='free-trial'>
-                    Let's get started with your 30 days free trial
+                    Find and rate Tacos Spots <br></br> all over the country 
                 </p>
                 
 
-            <input className='input-bar' type="text" placeholder="Login with Google"></input>
-                <hr className='hr-text' data-content='or'></hr>
+            {/* <input className='input-bar' type="text" placeholder="Login with Google"></input> */}
+                {/* <hr className='hr-text' data-content='or'></hr> */}
     
             </div>
             <div>
-                <div className='name'>
+                {/* <div className='name'>
                     Name
-                </div>
-                <input className='input-bar' type="text" placeholder="  Name"></input>
+                </div> */}
+                {/* <input className='input-bar' type="text" placeholder="  Name"></input> */}
             </div>
             <div>
-                <div className='name'>
+                {/* <div className='name'>
                     Email
-                </div>
-                <input className='input-bar' type='text' placeholder="  Email"></input>
+                </div> */}
+                {/* <input className='input-bar' type='text' placeholder="  Email"></input> */}
             </div>
-            <div>
+            {/* <div>
                 <div className='name'>
                     Password
                 </div>
                 <input className='input-bar' type="text" placeholder="  Password"></input>
-            </div>
+            </div> */}
             <div className='check-box'>
                 <span>
                     <input type="checkbox" checked="checked"></input>
@@ -51,9 +51,9 @@ const Login = () => {
                 <LoginButton className='input-bar' />
                 {/* <button className='input-bar'>Sign Up</button> */}
             </div>
-            <div>
-                Already have an account? Log In -link-
-            </div>
+            {/* <div>
+                Already have an account? 
+            </div> */}
         </div>
     )
 }
