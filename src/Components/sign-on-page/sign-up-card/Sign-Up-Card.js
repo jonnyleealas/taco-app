@@ -5,7 +5,6 @@ const SignOn = () => {
     return (
         <div className="sign-up-card">
             <div>
-
                 <h1>
                     Create your account
                 </h1>
@@ -14,7 +13,7 @@ const SignOn = () => {
                 </p>
                 
 
-            <input className='input-bar' type="text" placeholder="                                Login with Google"></input>
+            <input className='input-bar' type="text" placeholder="Login with Google"></input>
                 <hr className='hr-text' data-content='or'></hr>
     
             </div>
