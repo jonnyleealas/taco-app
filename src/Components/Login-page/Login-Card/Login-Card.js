@@ -1,8 +1,8 @@
 import React from 'react'
-import './sign-up-card.css'
+import './login-card.css'
 import LoginButton from './LoginButton'
 
-const SignOn = () => {
+const Login = () => {
     return (
         <div className="sign-up-card">
             <div>
@@ -58,4 +58,4 @@ const SignOn = () => {
     )
 }
 
-export default SignOn
+export default Login
