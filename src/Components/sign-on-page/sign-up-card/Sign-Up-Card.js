@@ -1,5 +1,6 @@
 import React from 'react'
 import './sign-up-card.css'
+import LoginButton from './LoginButton'
 
 const SignOn = () => {
     return (
@@ -46,7 +47,9 @@ const SignOn = () => {
                 </span>
             </div>
             <div>
-                <button className='input-bar'>Sign Up</button>
+               
+                <LoginButton className='input-bar' />
+                {/* <button className='input-bar'>Sign Up</button> */}
             </div>
             <div>
                 Already have an account? Log In -link-
