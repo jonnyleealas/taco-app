@@ -1,3 +1,4 @@
+import React from 'react'
 import './sign-in.css'
 
 
@@ -5,13 +6,9 @@ import './sign-in.css'
 const SignUp = () => {
     return (
         <div className="sign-in-card">
-          
                 <div className='login-h1'>
-
                 Login to Your Account
                 </div>
-        
-            
             <div>
                 <div>
                     Email

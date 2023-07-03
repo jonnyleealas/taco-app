@@ -1,10 +1,11 @@
+import React from 'react'
 import './sign-up-card.css'
+import LoginButton from './LoginButton'
 
 const SignOn = () => {
     return (
         <div className="sign-up-card">
             <div>
-
                 <h1>
                     Create your account
                 </h1>
@@ -13,7 +14,7 @@ const SignOn = () => {
                 </p>
                 
 
-            <input className='input-bar' type="text" placeholder="                                Login with Google"></input>
+            <input className='input-bar' type="text" placeholder="Login with Google"></input>
                 <hr className='hr-text' data-content='or'></hr>
     
             </div>
@@ -46,7 +47,9 @@ const SignOn = () => {
                 </span>
             </div>
             <div>
-                <button className='input-bar'>Sign Up</button>
+               
+                <LoginButton className='input-bar' />
+                {/* <button className='input-bar'>Sign Up</button> */}
             </div>
             <div>
                 Already have an account? Log In -link-
