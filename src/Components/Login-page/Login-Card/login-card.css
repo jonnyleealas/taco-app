@@ -29,7 +29,10 @@
     margin-bottom: 1em;
 }
 
-.input-bar:hover {background-color: #e7e7e7;}
+.input-bar:hover {
+    background-color: #e7e7e7;
+    cursor: pointer;
+}
 
 
 .check-box {
