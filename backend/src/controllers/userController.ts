@@ -31,18 +31,24 @@ controller.post(
     req: Omit<Request, "body"> & { body: PostUserRequest },
     res: Response<ObjectLiteral | ErrorObject>
   ) => {
-    const newUser = new UserEntity();
+    
     const { firstName, lastName, email } = req.body;
-    newUser.firstName = firstName;
-    newUser.lastName = lastName;
+  
     const foundUser = await useTypeORM(UserEntity).findOneBy({ email });
     if (foundUser) {
       res.status(200).send(foundUser);
     } else {
-      await typeORMDB.manager.transaction(async () => {
+      
+      const newUser = new UserEntity();
+      newUser.firstName = firstName;
+      newUser.lastName = lastName;
+      newUser.email = email;
+      console.log('typeORMDB? ', typeORMDB);
+      
+      // await typeORMDB.manager.transaction(async () => {
         const savedUser = await useTypeORM(UserEntity).save(newUser);
         res.status(201).send(savedUser);
-      });
+      // });
     }
   }
 );
