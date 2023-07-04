@@ -1,0 +1,15 @@
+.sign-on-page {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.taco-image {
+    width: 700px;
+    height: 650px;
+    border-radius: 15px;
+
+    margin-left: 1em;
+    margin-right: 1em;  
+}
