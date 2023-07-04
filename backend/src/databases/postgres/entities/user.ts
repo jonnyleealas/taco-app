@@ -11,4 +11,7 @@ export default class UserEntity implements UserInterface {
 
   @Column()
   lastName!: string;
+
+  @Column()
+  email!: string;
 }
