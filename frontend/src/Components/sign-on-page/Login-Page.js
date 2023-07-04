@@ -1,17 +1,16 @@
-import SignUp from './sign-up-card/Sign-Up-Card'
-import SignIn from './sign-in/Sign-In'
+import React from 'react'
+import LoginCard from './Login-Card/Login-Card'
 import tacoPic from './images/tacoImage.jpg'
 import './login-page.css'
 
 
-const signOnPage = () => {
+const LoginPage = () => {
     return (
         <div className='sign-on-page'>
-            <SignUp />
+            <LoginCard />
             <img className='taco-image' src={tacoPic} alt='tacos' />
-            {/* <SignIn /> */}
         </div>
     )
 }
 
-export default signOnPage
+export default LoginPage

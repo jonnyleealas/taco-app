@@ -1,4 +1,4 @@
-.sign-up-card {
+.signin-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +12,9 @@
 
 
 }
+
 .free-trial{
+    text-align: center;
     color: rgb(147, 143, 143);
 }
 
