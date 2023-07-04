@@ -25,9 +25,11 @@
     border-color: rgb(213, 206, 206);
     width: 325px;
     height: 35px;
-    
+
     margin-bottom: 1em;
 }
+
+.input-bar:hover {background-color: #e7e7e7;}
 
 
 .check-box {
