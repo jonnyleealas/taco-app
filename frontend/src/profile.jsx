@@ -24,7 +24,7 @@ function Profile() {
       });
 
       const rezJson = await rez.json();
-      console.log("rezJson? ", rezJson);
+      // console.log("rezJson? ", rezJson);
       setTacoUserState(rezJson);
     }
 
@@ -45,13 +45,11 @@ function Profile() {
         -
         {" "}
         {tacoUser.email}
-
       </h2>
       <p>Access has been granted</p>
       <LogOutButton />
     </article>
     )
-
   );
 }
 
