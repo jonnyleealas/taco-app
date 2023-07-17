@@ -54,6 +54,12 @@ function RatingPage() {
       <div>
         <textarea placeholder="What did you like or dislike? What do you recommend?" />
       </div>
+      <div className="photoButtonContainer">
+        <h3>Attach Photos</h3>
+        <button className="photoButton" type="button">
+          photo
+        </button>
+      </div>
       <div>
         <button type="submit">Submit</button>
       </div>
