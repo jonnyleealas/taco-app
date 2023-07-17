@@ -63,7 +63,7 @@ function RatingPage() {
         </button>
       </div>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="submitReviewButton">Submit Review</button>
       </div>
     </div>
   );
