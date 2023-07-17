@@ -1,5 +1,7 @@
 import { useState, React } from "react";
 import "./rating-page.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera } from "@fortawesome/free-solid-svg-icons";
 
 function RatingPage() {
   const [rating, setRating] = useState(1);
@@ -57,7 +59,7 @@ function RatingPage() {
       <div className="photoButtonContainer">
         <h3>Attach Photos</h3>
         <button className="photoButton" type="button">
-          photo
+          <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
         </button>
       </div>
       <div>
