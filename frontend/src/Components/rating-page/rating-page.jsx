@@ -3,10 +3,8 @@ import "./rating-page.css";
 
 function RatingPage() {
   const [rating, setRating] = useState(1);
-  // eslint-disable-next-line no-unused-vars
   const [wordRating, setWordRating] = useState(" ");
 
-  console.log(wordRating);
   const handleSlide = (e) => {
     setRating(e.target.value);
 
