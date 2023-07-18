@@ -75,7 +75,7 @@ function RatingPage() {
         </div>
       </div>
       <div>
-        <button type="button" className="submitReviewButton" onClick={handleModal}>Submit Review</button>
+        <button type="button" className="submitReviewButton">Submit Review</button>
       </div>
     </div>
   );

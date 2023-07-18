@@ -2,6 +2,5 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
-   valign-items: center;
-   
+    align-items: center; 
 }
