@@ -2,10 +2,12 @@ import { useState, React } from "react";
 import "./rating-page.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import Modal from "./modal";
 
 function RatingPage() {
   const [rating, setRating] = useState(1);
   const [wordRating, setWordRating] = useState(" ");
+  const [openModal, setOpenModal] = useState(false);
 
   const handleSlide = (e) => {
     setRating(e.target.value);
@@ -41,6 +43,10 @@ function RatingPage() {
     return wordRating;
   };
 
+  const handleModal = () => {
+    setOpenModal(true);
+  };
+
   return (
     <div className="rating-page-container">
       <div>
@@ -58,12 +64,15 @@ function RatingPage() {
       </div>
       <div className="photoButtonContainer">
         <h3>Attach Photos</h3>
-        <button className="photoButton" type="button">
+        <button className="photoButton" type="button" onClick={handleModal}>
           <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
         </button>
+        <div>
+          <Modal open={openModal} />
+        </div>
       </div>
       <div>
-        <button type="submit" className="submitReviewButton">Submit Review</button>
+        <button type="button" className="submitReviewButton" onClick={handleModal}>Submit Review</button>
       </div>
     </div>
   );
