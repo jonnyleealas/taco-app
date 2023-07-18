@@ -47,6 +47,9 @@ function RatingPage() {
     setOpenModal(true);
   };
 
+  const handleModalClose = () => {
+    setOpenModal(false);
+  };
   return (
     <div className="rating-page-container">
       <div>
@@ -68,7 +71,7 @@ function RatingPage() {
           <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
         </button>
         <div>
-          <Modal open={openModal} />
+          <Modal open={openModal} onClose={handleModalClose}/>
         </div>
       </div>
       <div>
