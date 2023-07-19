@@ -52,30 +52,32 @@ function RatingPage() {
   };
   return (
     <div className="rating-page-container">
-      <div>
-        <h1>Mcdonalds</h1>
-        {rating}
-      </div>
-      <div>
-        <input className="slider" type="range" min="1" max="10" step=".1" value={rating} onChange={handleSlide} />
-      </div>
-      <div>
-        {wordRating}
-      </div>
-      <div>
-        <textarea placeholder="What did you like or dislike? What do you recommend?" />
-      </div>
-      <div className="photoButtonContainer">
-        <h3>Attach Photos</h3>
-        <button className="photoButton" type="button" onClick={handleModal}>
-          <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
-        </button>
+      <div className="rating-page">
         <div>
-          <Modal open={openModal} onClose={handleModalClose}/>
+          <h1>Mcdonalds</h1>
+          {rating}
         </div>
-      </div>
-      <div>
-        <button type="button" className="submitReviewButton">Submit Review</button>
+        <div>
+          <input className="slider" type="range" min="1" max="10" step=".1" value={rating} onChange={handleSlide} />
+        </div>
+        <div>
+          {wordRating}
+        </div>
+        <div>
+          <textarea placeholder="What did you like or dislike? What do you recommend?" />
+        </div>
+        <div className="photoButtonContainer">
+          <h3>Attach Photos</h3>
+          <button className="photoButton" type="button" onClick={handleModal}>
+            <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
+          </button>
+          <div>
+            <Modal open={openModal} onClose={handleModalClose} />
+          </div>
+        </div>
+        <div>
+          <button type="button" className="submitReviewButton">Submit Review</button>
+        </div>
       </div>
     </div>
   );

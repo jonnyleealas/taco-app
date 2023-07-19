@@ -1,8 +1,8 @@
 .rating-page-container{
-    width: 100%;
-    margin: auto;
-   
-    
+  height: 100vh;
+  width: 100vw;
+  margin: auto;
+
 }
 
 
@@ -73,7 +73,7 @@ textarea:focus{
     cursor: pointer;
   }
 
-  /* .submitReviewButton {
+  .submitReviewButton {
     -webkit-appearance: none;
     background: #d3d3d3;
     outline: none;
@@ -94,7 +94,7 @@ textarea:focus{
   .submitReviewButton:focus {
     opacity: 1;
     background-color: #e77600;
-  } */
+  } 
 
   
   .submitReviewButton {

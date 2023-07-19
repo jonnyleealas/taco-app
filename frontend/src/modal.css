@@ -1,0 +1,10 @@
+.overlay_background {
+    background-color: rgba(222, 4, 4, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 9;
+}
