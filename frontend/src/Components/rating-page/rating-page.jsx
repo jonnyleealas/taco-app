@@ -71,14 +71,14 @@ function RatingPage() {
           <button className="photoButton" type="button" onClick={handleModal}>
             <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
           </button>
-          <div>
-            <Modal open={openModal} onClose={handleModalClose} />
-          </div>
         </div>
         <div>
           <button type="button" className="submitReviewButton">Submit Review</button>
         </div>
       </div>
+          <div className="Modal-Component">
+            <Modal open={openModal} onClose={handleModalClose} />
+          </div>
     </div>
   );
 }
