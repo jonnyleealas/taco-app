@@ -13,8 +13,6 @@ function App() {
       {isAuthenticated ? (
         <RatingPage />
       ) : <LoginPage />}
-
-      );
     </div>
   );
 }
