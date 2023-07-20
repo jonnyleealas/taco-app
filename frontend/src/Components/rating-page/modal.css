@@ -11,11 +11,11 @@
 
 .modalContainer {
     background-color: white;
-    width: 650px;
-    height: 400px;
+    width: 960px;
+    height: 460px;
     border-style: solid;
     border-color: black;
-    border-radius: 15px;
+    border-radius: 5px;
 
     position: fixed;
     top: 45%;
