@@ -76,9 +76,9 @@ function RatingPage() {
           <button type="button" className="submitReviewButton">Submit Review</button>
         </div>
       </div>
-          <div className="Modal-Component">
-            <Modal open={openModal} onClose={handleModalClose} />
-          </div>
+      <div className="Modal-Component">
+        <Modal open={openModal} onClose={handleModalClose} />
+      </div>
     </div>
   );
 }
