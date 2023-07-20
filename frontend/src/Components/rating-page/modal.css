@@ -10,9 +10,12 @@
 }
 
 .modalContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
-    width: 960px;
-    height: 460px;
+    width: 55em;
+    height: 27em;
     border-style: solid;
     border-color: black;
     border-radius: 5px;
@@ -22,6 +25,26 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.modalDottedLine {
+    display: flex;
+    justify-content: end;
+    align-items: start;
+    position: relative;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    width: 50em;
+    height: 22em;
+}
+
+
+.x {
+    position: relative;
+    top: -15px;
+    right: 5px;
+    font-size: 16px;
+}
+
 
 .x:hover {
     cursor: pointer;

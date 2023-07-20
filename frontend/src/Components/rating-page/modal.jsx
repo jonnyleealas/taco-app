@@ -7,11 +7,10 @@ function Modal({ open, onClose }) {
 
     <div className="overlay">
       <div className="modalContainer">
-        <div>
-          Modal
-        </div>
-        <div>
-          <p className="x" onClick={onClose}>X</p>
+        <div className="modalDottedLine">
+          <div>
+            <p className="x" onClick={onClose}>X</p>
+          </div>
         </div>
       </div>
     </div>
