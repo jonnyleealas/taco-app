@@ -3,6 +3,7 @@ import "./rating-page.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./modal/modal";
+import Taco from "./images/tacoLogo.jpg";
 
 function RatingPage() {
   const [rating, setRating] = useState(1);
@@ -54,7 +55,9 @@ function RatingPage() {
     <div className="ratingContainer">
 
       <div className="ratingPageHeader">
-        Taco App
+        <div className="taco-image">
+          <div>Taco App :</div>
+        </div>
       </div>
       <div className="rating-page-container">
 
