@@ -52,6 +52,7 @@ function RatingPage() {
   };
   return (
     <div className="rating-page-container">
+      <header className="ratingPageHeader">Website logo</header>
       <div className="rating-page">
         <div>
           <h1>Mcdonalds</h1>
