@@ -2,7 +2,7 @@ import { useState, React } from "react";
 import "./rating-page.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
-import Modal from "./modal";
+import Modal from "./modal/modal";
 
 function RatingPage() {
   const [rating, setRating] = useState(1);
@@ -51,34 +51,40 @@ function RatingPage() {
     setOpenModal(false);
   };
   return (
-    <div className="rating-page-container">
-      <header className="ratingPageHeader">Website logo</header>
-      <div className="rating-page">
-        <div>
-          <h1>Mcdonalds</h1>
-          {rating}
-        </div>
-        <div>
-          <input className="slider" type="range" min="1" max="10" step=".1" value={rating} onChange={handleSlide} />
-        </div>
-        <div>
-          {wordRating}
-        </div>
-        <div>
-          <textarea placeholder="What did you like or dislike? What do you recommend?" />
-        </div>
-        <div className="photoButtonContainer">
-          <h3>Attach Photos</h3>
-          <button className="photoButton" type="button" onClick={handleModal}>
-            <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
-          </button>
-        </div>
-        <div>
-          <button type="button" className="submitReviewButton">Submit Review</button>
-        </div>
+    <div className="ratingContainer">
+
+      <div className="ratingPageHeader">
+        Taco App
       </div>
-      <div className="Modal-Component">
-        <Modal open={openModal} onClose={handleModalClose} />
+      <div className="rating-page-container">
+
+        <div className="rating-page">
+          <div>
+            <h1>Mcdonalds</h1>
+            {rating}
+          </div>
+          <div>
+            <input className="slider" type="range" min="1" max="10" step=".1" value={rating} onChange={handleSlide} />
+          </div>
+          <div>
+            {wordRating}
+          </div>
+          <div>
+            <textarea placeholder="What did you like or dislike? What do you recommend?" />
+          </div>
+          <div className="photoButtonContainer">
+            <h3>Attach Photos</h3>
+            <button className="photoButton" type="button" onClick={handleModal}>
+              <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
+            </button>
+          </div>
+          <div>
+            <button type="button" className="submitReviewButton">Submit Review</button>
+          </div>
+        </div>
+        <div className="Modal-Component">
+          <Modal open={openModal} onClose={handleModalClose} />
+        </div>
       </div>
     </div>
   );
