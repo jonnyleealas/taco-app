@@ -3,7 +3,6 @@ import "./rating-page.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./modal/modal";
-import Taco from "./images/tacoLogo.jpg";
 
 function RatingPage() {
   const [rating, setRating] = useState(1);
@@ -56,11 +55,10 @@ function RatingPage() {
 
       <div className="ratingPageHeader">
         <div className="taco-image">
-          <div>Taco App :</div>
+          <p>Taco App 🌮 </p>
         </div>
       </div>
       <div className="rating-page-container">
-
         <div className="rating-page">
           <div>
             <h1>Mcdonalds</h1>
@@ -72,7 +70,7 @@ function RatingPage() {
           <div>
             {wordRating}
           </div>
-          <div>
+          <div className="text-area-container">
             <textarea placeholder="What did you like or dislike? What do you recommend?" />
           </div>
           <div className="photoButtonContainer">
@@ -81,7 +79,7 @@ function RatingPage() {
               <FontAwesomeIcon icon={faCamera} size="3x" className="fa-solid" />
             </button>
           </div>
-          <div>
+          <div className="review-button-container">
             <button type="button" className="submitReviewButton">Submit Review</button>
           </div>
         </div>
