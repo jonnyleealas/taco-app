@@ -1,5 +1,6 @@
 import React from "react";
 import "./modal.css";
+import TacoModalImage from "../images/tacoModalImage.jpg";
 
 function Modal({ open, onClose }) {
   if (!open) return null;
@@ -10,6 +11,9 @@ function Modal({ open, onClose }) {
         <div className="modalDottedLine">
           <div className="x-container">
             <p className="x" onClick={onClose} role="presentation">X</p>
+          </div>
+          <div className="taco-modal-image">
+            <img className="taco-inside-modal" src={TacoModalImage} alt="taco modal" />
           </div>
           <div className="or-button-container">
             <div className="drag-drop-container">

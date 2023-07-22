@@ -31,9 +31,8 @@
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
-     ". .  x-container"
+     ". taco-modal-image x-container"
      ". or-button-container ."
-    
     ;
     position: relative;
     border: 2px dashed #ccc;
@@ -68,6 +67,17 @@
     border-radius: 50%;
     background-color: rgb(194, 200, 200);
     cursor: pointer;
+}
+
+.taco-modal-image {
+    grid-area: taco-modal-image;
+    margin-top: 1.5em;
+}
+
+.taco-inside-modal {
+    width: 266px;
+    height: 176px;
+    border-radius: 5px;
 }
 
 .or-button-container {
