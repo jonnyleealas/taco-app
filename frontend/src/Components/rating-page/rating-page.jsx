@@ -1,8 +1,8 @@
 import { useState, React } from "react";
-import "./Rating-Page.css";
+import "./rating-page.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faCamera } from "@fortawesome/free-solid-svg-icons";
-import Modal from "./Modal/Modal";
+import Modal from "./modal/modal";
 
 function RatingPage() {
   const [rating, setRating] = useState(1);

@@ -1,8 +1,8 @@
 import { React } from "react";
-import "./App.css";
+import "./app.css";
 import { useAuth0 } from "@auth0/auth0-react";
-import LoginPage from "./Components/Login-page/Login-Page";
-import RatingPage from "./Components/Rating-Page/Rating-Page";
+import LoginPage from "./components/login-page/login-page";
+import RatingPage from "./components/rating-page/rating-page";
 
 function App() {
   const { isAuthenticated } = useAuth0();

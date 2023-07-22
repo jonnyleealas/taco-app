@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import LogOutButton from "./Log-Out-Button";
+import LogOutButton from "./log-out-button";
 
 function Profile() {
   const { user, isAuthenticated } = useAuth0();
-
+  //
   const [tacoUser, setTacoUserState] = useState({});
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from "react";
-import "./Modal.css";
-import TacoModalImage from "../Images/tacoModalImage.jpg";
+import "./modal.css";
+import TacoModalImage from "../images/tacoModalImage.jpg";
 
 function Modal({ open, onClose }) {
   if (!open) return null;

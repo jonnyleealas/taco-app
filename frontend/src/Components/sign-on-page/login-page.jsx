@@ -1,7 +1,7 @@
 import React from "react";
-import LoginCard from "../Login-page/Login-Card/Login-Card";
-import tacoPic from "./Images/tacoImage.jpg";
-
+import LoginCard from "../login-page/login-card/login-card";
+import tacoPic from "./images/tacoImage.jpg";
+//
 function LoginPage() {
   return (
     <div className="sign-on-page">
