@@ -25,5 +25,5 @@ jobs: # list of things to do
       - name: Install Dependencies
         run: npm ci
 
-      - name: Code Linting
-        run: cd ./frontend npm run lint
+      - name: Frontend Linting
+        run: npm run lint
