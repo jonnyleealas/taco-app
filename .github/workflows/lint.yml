@@ -18,9 +18,11 @@ jobs: # list of things to do
 
       - name: Code Checkout
         uses: actions/checkout@v2
+        
+      - name: Preinstall
 
-      - name: Install Dependencies
         run: npm install --package-lock-only
+      - name: Install Dependencies
         run: npm ci
 
       - name: Code Linting
