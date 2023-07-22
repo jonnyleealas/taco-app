@@ -12,7 +12,13 @@ function Modal({ open, onClose }) {
             <p className="x" onClick={onClose} role="presentation">X</p>
           </div>
           <div className="drag-drop-container">
-            <p>Drag and drop image</p>
+            <p>Drag and drop photos here</p>
+          </div>
+          <div className="or">
+            <p>or</p>
+          </div>
+          <div className="modal-button-container">
+            <button className="modal-button" type="button">Browse Files</button>
           </div>
         </div>
       </div>

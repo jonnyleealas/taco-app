@@ -67,3 +67,18 @@
     justify-content: center;
     margin-top: 6em;
 }
+
+.or {
+    text-align: center;
+}
+
+.modal-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: .5em;
+}
+
+.modal-button {
+    height: 44px;
+    width: 126px;
+}
