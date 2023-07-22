@@ -27,8 +27,14 @@
 }
 
 .modalDottedLine {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+     ". .  x-container"
+     ". or-button-container ."
+    
+    ;
     position: relative;
     border: 2px dashed #ccc;
     border-radius: 5px;
@@ -36,10 +42,13 @@
     height: 22em;
 }
 
+
 .x-container {
+    grid-area: x-container;
+    
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: start;
 }
 
 
@@ -61,21 +70,32 @@
     cursor: pointer;
 }
 
+.or-button-container {
+    grid-area: or-button-container;
+
+}
 
 .drag-drop-container {
+    grid-area: drag-drop-container;
+
     display: flex;
+    
     justify-content: center;
-    margin-top: 6em;
+    align-items: flex-start;
 }
 
 .or {
-    text-align: center;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+   
 }
 
 .modal-button-container {
     display: flex;
     justify-content: center;
-    margin-top: .5em;
+    margin-bottom: .5em;
 }
 
 .modal-button {
