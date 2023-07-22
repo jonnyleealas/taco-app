@@ -20,6 +20,7 @@ jobs: # list of things to do
         uses: actions/checkout@v2
 
       - name: Install Dependencies
+        run: npm install --package-lock-only
         run: npm ci
 
       - name: Code Linting
