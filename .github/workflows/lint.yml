@@ -10,8 +10,10 @@ jobs: # list of things to do
   linting:
     name: Frontend Linting # job name (unique id)
     runs-on: ubuntu-latest # on which machine to run
+    defaults:
+      run:
+        working-directory: ./frontend
     steps: # list of steps
-      working-directory: ./frontend
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
