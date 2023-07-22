@@ -19,6 +19,16 @@
     "rules": {
         "quotes": ["error", "double"],
         "react/prop-types": "off",
-        "import/no-unresolved": [2, { "caseSensitive": true  }]
+        "import/no-unresolved": [2, { "caseSensitive": true  }],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+              "js": "never",
+              "jsx": "never",
+              "ts": "never",
+              "tsx": "never"
+            }
+         ]
     }
 }
