@@ -25,6 +25,7 @@
 }
 
 .taco-logo{
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,6 +40,8 @@
   border-width: 2px;
 
   margin-left: 4em;
+
+  background-color: #e77600;
 }
 
 
