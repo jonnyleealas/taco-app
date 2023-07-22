@@ -1,7 +1,7 @@
 name: Frontend Lint # name of the action (displayed in the github interface)
 
 on: # event list
-  [push, pull_request]
+  [push,pull_request]
 
 env: # environment variables (available in any part of the action)
   NODE_VERSION: 16
@@ -11,6 +11,7 @@ jobs: # list of things to do
     name: Frontend Linting # job name (unique id)
     runs-on: ubuntu-latest # on which machine to run
     steps: # list of steps
+      working-directory: ./frontend
       - name: Install NodeJS
         uses: actions/setup-node@v2
         with:
@@ -18,10 +19,7 @@ jobs: # list of things to do
 
       - name: Code Checkout
         uses: actions/checkout@v2
-        
-      - name: Preinstall
 
-        run: npm install --package-lock-only
       - name: Install Dependencies
         run: npm ci
 
