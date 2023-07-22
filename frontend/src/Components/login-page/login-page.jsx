@@ -1,6 +1,6 @@
 import React from "react";
 import LoginCard from "./Login-Card/Login-Card";
-import tacoPic from "./images/tacoImage.jpg";
+import tacoPic from "./Images/tacoImage.jpg";
 
 function LoginPage() {
   return (
