@@ -6,14 +6,13 @@ function Modal({ open, onClose }) {
   return (
 
     <div className="overlay" onClick={onClose} role="presentation">
-      <div>
-        Header
-      </div>
       <div className="modalContainer">
         <div className="modalDottedLine">
-        {/* add two row grid to flex x to one end and center bottom button */}
-          <div>
+          <div className="x-container">
             <p className="x" onClick={onClose} role="presentation">X</p>
+          </div>
+          <div className="drag-drop-container">
+            <p>Drag and drop image</p>
           </div>
         </div>
       </div>

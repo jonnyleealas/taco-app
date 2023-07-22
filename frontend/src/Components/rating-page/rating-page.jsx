@@ -54,7 +54,7 @@ function RatingPage() {
     <div className="ratingContainer">
 
       <div className="ratingPageHeader">
-        <div className="taco-image">
+        <div className="taco-logo">
           <p>Taco App 🌮 </p>
         </div>
       </div>
