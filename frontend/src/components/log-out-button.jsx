@@ -1,14 +1,19 @@
 import React from "react";
-import { useAuth0 } from "@auth0/auth0-react";
+import {useAuth0} from "@auth0/auth0-react";
 
+/**
+ *  logout button component
+ * @return {component} the Log out button component
+ */
 function LogOutButton() {
-  const { logout, isAuthenticated } = useAuth0();
-  //
+  const {logout, isAuthenticated} = useAuth0();
   return (
     isAuthenticated && (
       <button
         type="button"
-        onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
+        onClick={() =>
+          logout({logoutParams: {returnTo: window.location.origin}})
+        }
       >
         Log Out
       </button>

@@ -2,7 +2,11 @@ import React from "react";
 import "./modal.css";
 import TacoModalImage from "../images/tacoModalImage.jpg";
 
-function Modal({ open, onClose }) {
+/**
+ *  The Modal component
+ * @return {component} the Modal component
+ */
+function Modal({open, onClose}) {
   if (!open) return null;
   return (
 
@@ -13,7 +17,10 @@ function Modal({ open, onClose }) {
             <p className="x" onClick={onClose} role="presentation">X</p>
           </div>
           <div className="taco-modal-image">
-            <img className="taco-inside-modal" src={TacoModalImage} alt="taco modal" />
+            <img className="taco-inside-modal"
+              src={TacoModalImage}
+              alt="taco modal"
+            />
           </div>
           <div className="or-button-container">
             <div className="drag-drop-container">
@@ -23,7 +30,12 @@ function Modal({ open, onClose }) {
               <p>or</p>
             </div>
             <div className="modal-button-container">
-              <button className="modal-button" type="button">Browse Files</button>
+              <button
+                className="modal-button"
+                type="button"
+              >
+                Browse Files
+              </button>
             </div>
           </div>
         </div>

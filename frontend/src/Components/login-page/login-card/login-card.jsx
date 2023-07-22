@@ -2,6 +2,10 @@ import React from "react";
 import "./login-card.css";
 import LoginButton from "./login-button";
 
+/**
+ *  The Login Card component
+ * @return {component} the Login component
+ */
 function Login() {
   return (
     <div className="signin-card">

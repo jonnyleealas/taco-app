@@ -1,9 +1,13 @@
-import { useState, React } from "react";
+import {useState, React} from "react";
 import "./rating-page.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faCamera } from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faUser, faCamera} from "@fortawesome/free-solid-svg-icons";
 import Modal from "./modal/modal";
 
+/**
+ *  The RatingPage component
+ * @return {component} the RatingPage component
+ */
 function RatingPage() {
   const [rating, setRating] = useState(1);
   const [wordRating, setWordRating] = useState(" ");
@@ -67,13 +71,23 @@ function RatingPage() {
             {rating}
           </div>
           <div>
-            <input className="slider" type="range" min="1" max="10" step=".1" value={rating} onChange={handleSlide} />
+            <input
+              className="slider"
+              type="range"
+              min="1"
+              max="10"
+              step=".1"
+              value={rating}
+              onChange={handleSlide}
+            />
           </div>
           <div>
             {wordRating}
           </div>
           <div className="text-area-container">
-            <textarea placeholder="What did you like or dislike? What do you recommend?" />
+            <textarea
+              placeholder="What did you like or dislike? What do you recommend?"
+            />
           </div>
           <div className="photoButtonContainer">
             <h3>Attach Photos</h3>
@@ -82,7 +96,12 @@ function RatingPage() {
             </button>
           </div>
           <div className="review-button-container">
-            <button type="button" className="submitReviewButton">Submit Review</button>
+            <button
+              type="button"
+              className="submitReviewButton"
+            >
+              Submit Review
+            </button>
           </div>
         </div>
         <div className="Modal-Component">
