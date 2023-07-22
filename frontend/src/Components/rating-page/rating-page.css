@@ -16,22 +16,34 @@
 }
 
 .ratingPageHeader {
-  display: flex;
-  align-items: center;
-  height: 7em;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-areas:
+  "taco-logo . faUser"
+  ;
+
+  height: 5em;
   width: 100%;
 
   border-bottom: 1px solid #ebebeb;
 }
 
+.taco-logo-container {
+  grid-area: taco-logo;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 .taco-logo{
   color: white;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
 
-  height: 4em;
+  height: 2em;
   width: 7em;
 
   border-style: solid;
@@ -39,11 +51,19 @@
   border-color: #efbb83;
   border-width: 2px;
 
-  margin-left: 4em;
-
   background-color: #e77600;
 }
 
+.faUser {
+  grid-area: faUser;
+
+  display: grid;
+  justify-content: end;
+  align-items: flex-start;
+
+  padding-top: 1em;
+  padding-right: 2em;
+}
 
 .rating-page {
   width: 700px;

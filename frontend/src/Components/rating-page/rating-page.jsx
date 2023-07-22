@@ -1,7 +1,7 @@
 import { useState, React } from "react";
 import "./rating-page.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCamera } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faCamera } from "@fortawesome/free-solid-svg-icons";
 import Modal from "./modal/modal";
 
 function RatingPage() {
@@ -53,8 +53,11 @@ function RatingPage() {
   return (
     <div className="ratingContainer">
       <div className="ratingPageHeader">
-        <div className="taco-logo">
-          <p>Taco App 🌮 </p>
+        <div className="taco-logo-container">
+          <p className="taco-logo">Taco App 🌮 </p>
+        </div>
+        <div className="faUser">
+          <FontAwesomeIcon icon={faUser} size="2x" className="fa-solid" />
         </div>
       </div>
       <div className="rating-page-container">
