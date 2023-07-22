@@ -1,6 +1,6 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import "./login-card.css";
+import "./Login-Card.css";
 
 function LoginButton() {
   const { loginWithRedirect } = useAuth0();

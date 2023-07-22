@@ -1,6 +1,6 @@
 import React from "react";
-import "./login-card.css";
-import LoginButton from "./login-button";
+import "./Login-Card.css";
+import LoginButton from "./Login-Button";
 
 function Login() {
   return (
