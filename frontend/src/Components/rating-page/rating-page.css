@@ -17,7 +17,7 @@
 
 .ratingPageHeader {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 15fr 1fr;
   grid-template-areas:
   "taco-logo . faUser"
   ;
@@ -45,7 +45,9 @@
 
   height: 2em;
   width: 7em;
-
+  
+  position: relative;
+  left: 2em;
   border-style: solid;
   border-radius: 5px;
   border-color: #efbb83;
@@ -57,12 +59,13 @@
 .faUser {
   grid-area: faUser;
 
-  display: grid;
-  justify-content: end;
-  align-items: flex-start;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
-  padding-top: 1em;
-  padding-right: 2em;
+  position: relative;
+  right: 2.5em;
+  
 }
 
 .rating-page {
