@@ -33,11 +33,3 @@ function Drag() {
 
 
 export default Drag;
-
-
-// [eslint]
-// src/Components/rating-page/drag-drop/Drag-drop.jsx
-//   Line 28:15:  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
-//   Line 28:17:  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
-
-// Search for the keywords to learn more about each error
