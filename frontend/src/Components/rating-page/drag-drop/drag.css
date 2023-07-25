@@ -1,0 +1,17 @@
+.form-container {
+    width: 300px;
+    height: 200px;
+    background-color: red;
+}
+
+.p-tag {
+    width: 400px;
+    height: 100px;
+    background-color: green;
+}
+
+.f-tag {
+    width: 300px;
+    height: 200px;
+    background-color: grey;
+}
