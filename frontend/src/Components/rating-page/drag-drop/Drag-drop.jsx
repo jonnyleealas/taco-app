@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import {React, useCallback} from "react";
 import {useDropzone} from "react-dropzone";
 import "./drag.css";
@@ -5,33 +6,38 @@ import "./drag.css";
  *  The Modal component
  * @return {component} the Modal component
  */
-function Drag({className}) {
+function Drag() {
   const onDrop = useCallback((acceptedFiles) => {
-    console.log(acceptedFiles);
+    acceptedFiles.forEach((file) => {
+      const reader = new FileReader();
+
+      reader.onabort = () => console.log("file reading was aborted");
+      reader.onerror = () => console.log("file reading has failed");
+      reader.onload = () => {
+      // Do whatever you want with the file contents
+        const binaryStr = reader.result;
+        console.log(binaryStr);
+      };
+      reader.readAsArrayBuffer(file);
+    });
   }, []);
-
-  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop});
-
+  const {getRootProps, getInputProps} = useDropzone({onDrop});
 
   return (
-    <div>
-      <h1 className="f-tag">This uploads stuff</h1>
-      <form>
-        <div {...getRootProps({
-          className: className,
-        })}>
-          <input {...getInputProps()} />
-          {isDragActive ? (
-            <p>Drag the files here ...</p>
-          ) : (
-            <p className="p-tag">Drag and drop some files</p>
-          )}
-        </div>
-      </form>
-
+    <div {...getRootProps()}>
+      <input {...getInputProps()} />
+      <p>Drag n drop some files here, or click to select files</p>
     </div>
   );
 }
 
 
 export default Drag;
+
+
+// [eslint]
+// src/Components/rating-page/drag-drop/Drag-drop.jsx
+//   Line 28:15:  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+//   Line 28:17:  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+// Search for the keywords to learn more about each error
