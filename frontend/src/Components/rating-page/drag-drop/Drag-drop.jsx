@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {React, useMemo, useCallback} from "react";
 import {useDropzone} from "react-dropzone";
 
@@ -53,6 +54,7 @@ function Drag(props) {
   const {
     getRootProps,
     getInputProps,
+    // eslint-disable-next-line no-unused-vars
     isFocused,
     isDragAccept,
     isDragReject,
@@ -74,13 +76,21 @@ function Drag(props) {
 
 
     <div className="container">
-      <div {...getRootProps()}>
+      <div {...getRootProps({
+        className: "drag-drop-container",
+      },
+      )}>
         <input {...getInputProps()} />
-        <p>Drag and drop photos here</p>
-        <button type="button" onClick={open}>
+        <div {...getRootProps({
+          className: "button-container",
+        })}>
+          <p>Drag and drop photos here</p>
+          <button type="button" onClick={open}>
         Browse Files
-        </button>
+          </button>
+        </div>
         <p {...getRootProps({
+          className: "X-container",
           onClick: props.onClose,
           role: "presentation",
         })}>X</p>

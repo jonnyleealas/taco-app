@@ -1,23 +1,54 @@
-.form-container {
-    width: 300px;
-    height: 200px;
-    background-color: red;
-}
-
 .container {
-    width: 400px;
-    height: 500px;
-    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 55em;
+    height: 27em;
+ 
+
+    border-radius: 5px;
+
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 }
-.p-tag {
-    width: 400px;
-    height: 100px;
-    background-color: green;
+
+.drag-drop-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+     ". . x-container"
+     ". button-container ."
+    ;
+    position: relative;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    width: 50em;
+    height: 22em;
 }
 
-.f-tag {
-    width: 300px;
-    height: 200px;
-    background-color: grey;
+.X-container {
+    grid-area: x-container;
+    
+    display: flex;
+    justify-content: end;
+    align-items: start;
+
+    position: relative;
+    top: -10px;
+    right: 10px;
+    font-size: 16px;
+}
+
+.button-container {
+    grid-area: button-container;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
