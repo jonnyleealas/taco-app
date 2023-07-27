@@ -8,7 +8,7 @@ const baseStyle = {
   alignItems: "center",
   padding: "20px",
   borderWidth: 2,
-  borderRadius: 2,
+  borderRadius: 5,
   borderColor: "#eeeeee",
   borderStyle: "dashed",
   backgroundColor: "#fafafa",
@@ -28,13 +28,14 @@ const acceptStyle = {
 const rejectStyle = {
   borderColor: "#ff1744",
 };
-
 // eslint-disable-next-line valid-jsdoc
 /**
  *  The Modal component
  * @return {component} the Modal component
  */
 function Drag(props) {
+  if (!props.open) return null;
+
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader();
@@ -70,6 +71,8 @@ function Drag(props) {
   ]);
 
   return (
+
+
     <div className="container">
       <div {...getRootProps({style})}>
         <input {...getInputProps()} />
@@ -77,6 +80,10 @@ function Drag(props) {
         <button type="button" onClick={open}>
           Open File Dialog
         </button>
+        <p {...getRootProps({
+          onClick: props.onClose,
+          role: "presentation",
+        })}>X</p>
       </div>
     </div>
   );
