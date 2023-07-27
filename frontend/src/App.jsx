@@ -28,9 +28,9 @@ function App() {
         <RatingPage />
       // eslint-disable--line react/jsx-no-comment-textnodes, react/jsx-no-comment-textnodes
       ) : <LoginPage />} */}
-      <Drag open={openModal} onClose={handleModalClose} />
-      {/* <RatingPage /> */}
-      <button onClick={handleModal}>opne</button>
+      {/* <Drag open={openModal} onClose={handleModalClose} /> */}
+      <RatingPage />
+      {/* <button onClick={handleModal}>opne</button> */}
     </div>
   );
 }

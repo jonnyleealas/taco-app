@@ -2,7 +2,7 @@ import {useState, React} from "react";
 import "./rating-page.css";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser, faCamera} from "@fortawesome/free-solid-svg-icons";
-import Modal from "./modal/modal";
+import DragNDrop from "./drag-drop/Drag-drop";
 
 /**
  *  The RatingPage component
@@ -105,7 +105,7 @@ function RatingPage() {
           </div>
         </div>
         <div className="Modal-Component">
-          <Modal open={openModal} onClose={handleModalClose} />
+          <DragNDrop open={openModal} onClose={handleModalClose} />
         </div>
       </div>
     </div>
