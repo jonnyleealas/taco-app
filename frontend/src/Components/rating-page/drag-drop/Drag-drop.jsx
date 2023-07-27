@@ -73,27 +73,28 @@ function Drag(props) {
   // ]);
 
   return (
+    <div className="overlay" onClick={props.onClose} role="presentation">
+      <div className="drag-drop-container">
 
-
-    <div className="container">
-      <div {...getRootProps({
-        className: "drag-drop-container",
-      },
-      )}>
-        <input {...getInputProps()} />
         <div {...getRootProps({
-          className: "button-container",
-        })}>
-          <p>Drag and drop photos here</p>
-          <button type="button" onClick={open}>
+          className: "container-dotted",
+        },
+        )}>
+          <input {...getInputProps()} />
+          <div {...getRootProps({
+            className: "button-container",
+          })}>
+            <p>Drag and drop photos here</p>
+            <button type="button" onClick={open}>
         Browse Files
-          </button>
+            </button>
+          </div>
+          <p {...getRootProps({
+            className: "X-container",
+            onClick: props.onClose,
+            role: "presentation",
+          })}>X</p>
         </div>
-        <p {...getRootProps({
-          className: "X-container",
-          onClick: props.onClose,
-          role: "presentation",
-        })}>X</p>
       </div>
     </div>
   );

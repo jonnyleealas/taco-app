@@ -1,4 +1,24 @@
-.container {
+
+
+
+.drag-drop-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 55em;
+    height: 27em;
+ 
+
+    border-radius: 5px;
+
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* .container-dotted {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,9 +34,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-}
+} */
 
-.drag-drop-container {
+.container-dotted {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
