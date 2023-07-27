@@ -1,12 +1,40 @@
-/* eslint-disable max-len */
-import {React, useCallback} from "react";
+import {React, useMemo, useCallback} from "react";
 import {useDropzone} from "react-dropzone";
-import "./drag.css";
+
+const baseStyle = {
+  flex: 1,
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  padding: "20px",
+  borderWidth: 2,
+  borderRadius: 2,
+  borderColor: "#eeeeee",
+  borderStyle: "dashed",
+  backgroundColor: "#fafafa",
+  color: "#bdbdbd",
+  outline: "none",
+  transition: "border .24s ease-in-out",
+};
+
+const focusedStyle = {
+  borderColor: "#2196f3",
+};
+
+const acceptStyle = {
+  borderColor: "#00e676",
+};
+
+const rejectStyle = {
+  borderColor: "#ff1744",
+};
+
+// eslint-disable-next-line valid-jsdoc
 /**
  *  The Modal component
  * @return {component} the Modal component
  */
-function Drag() {
+function Drag(props) {
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader();
@@ -21,15 +49,37 @@ function Drag() {
       reader.readAsArrayBuffer(file);
     });
   }, []);
-  const {getRootProps, getInputProps} = useDropzone({onDrop});
+  const {
+    getRootProps,
+    getInputProps,
+    isFocused,
+    isDragAccept,
+    isDragReject,
+    open,
+  } = useDropzone({onDrop, accept: "image/*", noClick: true, noKeyboard: true});
+
+  const style = useMemo(() => ({
+    ...baseStyle,
+    ...(isFocused ? focusedStyle : {}),
+    ...(isDragAccept ? acceptStyle : {}),
+    ...(isDragReject ? rejectStyle : {}),
+  }), [
+    isFocused,
+    isDragAccept,
+    isDragReject,
+  ]);
 
   return (
-    <div {...getRootProps()}>
-      <input {...getInputProps()} />
-      <p>Drag n drop some files here, or click to select files</p>
+    <div className="container">
+      <div {...getRootProps({style})}>
+        <input {...getInputProps()} />
+        <p>Drag n drop some files here, or click to select files</p>
+        <button type="button" onClick={open}>
+          Open File Dialog
+        </button>
+      </div>
     </div>
   );
 }
-
 
 export default Drag;

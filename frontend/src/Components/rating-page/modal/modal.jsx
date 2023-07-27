@@ -1,5 +1,5 @@
 import {React, useCallback} from "react";
-import { useDropzone } from "react-dropzone";
+import {useDropzone} from "react-dropzone";
 import "./modal.css";
 import TacoModalImage from "../images/tacoModalImage.jpg";
 
@@ -42,9 +42,9 @@ function Modal({open, onClose}) {
             />
           </div>
           <div className="or-button-container">
-            <input className="drag-drop-container" {...getInputProps()}>
+            <div className="drag-drop-container" {...getInputProps()}>
               <p>Drag and drop photos here</p>
-            </input>
+            </div>
             <div className="or">
               <p>or</p>
             </div>

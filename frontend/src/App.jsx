@@ -17,9 +17,8 @@ function App() {
       {/* {isAuthenticated ? (
         <RatingPage />
       ) : <LoginPage />} */}
-      {/* <Drag className="form-container" /> */}
-
-      <RatingPage />
+      <Drag className="form-container" />
+{/* <RatingPage /> */}
     </div>
   );
 }
