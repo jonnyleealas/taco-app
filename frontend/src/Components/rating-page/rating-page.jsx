@@ -105,7 +105,7 @@ function RatingPage() {
           </div>
         </div>
         <div className="Modal-Component">
-          <DragNDrop open={openModal} onClose={handleModalClose} />
+          <DragNDrop openModal={openModal} onClose={handleModalClose} />
         </div>
       </div>
     </div>

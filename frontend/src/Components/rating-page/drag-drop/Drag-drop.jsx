@@ -9,7 +9,7 @@ import {useDropzone} from "react-dropzone";
  * @return {component} the Modal component
  */
 function Drag(props) {
-  if (!props.open) return null;
+  if (!props.openModal) return null;
 
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
@@ -25,6 +25,8 @@ function Drag(props) {
       reader.readAsArrayBuffer(file);
     });
   }, []);
+
+
   const {
     getRootProps,
     getInputProps,
@@ -49,7 +51,9 @@ function Drag(props) {
             className: "button-container",
           })}>
             <p>Drag and drop photos here</p>
-            <button type="button" onClick={open}>
+            <button type="button" {...getRootProps({
+              onClick: open,
+            })}>
         Browse Files
             </button>
           </div>
