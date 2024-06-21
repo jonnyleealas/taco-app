@@ -1,5 +1,5 @@
 import React from "react";
-import LoginCard from "../login-page/login-card/login-card";
+import LoginCard from "../Login-page/Login-Card/Login-card";
 import tacoPic from "./images/tacoImage.jpg";
 /**
  *  The LoginPage component

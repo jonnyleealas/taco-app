@@ -1,5 +1,5 @@
 import React from "react";
-import LoginCard from "./login-card/login-card";
+import LoginCard from "./Login-Card/Login-card";
 import tacoPic from "./images/tacoImage.jpg";
 
 /**

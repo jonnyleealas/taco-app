@@ -1,6 +1,6 @@
 import React from "react";
 import "./login-card.css";
-import LoginButton from "./login-button";
+import LoginButton from "./Login-button";
 
 /**
  *  The Login Card component

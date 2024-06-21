@@ -1,8 +1,8 @@
 import {React} from "react";
-import "./app.css";
+import "./App.css";
 import {useAuth0} from "@auth0/auth0-react";
-import LoginPage from "./components/login-page/login-page";
-import RatingPage from "./components/rating-page/rating-page";
+import LoginPage from "./Components/Login-page/Login-page.jsx";
+import RatingPage from "./Components/Rating-page/Rating-page.jsx";
 
 
 /**
