@@ -4,6 +4,7 @@ let typeORMDB: DataSource;
 
 export default async function typeORMConnect(): Promise<void> {
 
+  // DataSource establishes our database connection
   const dataSource = new DataSource({
     type: "postgres",
     url: process.env.PGSQL_URI,
