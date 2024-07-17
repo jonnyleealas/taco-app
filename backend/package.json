@@ -5,8 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "build": "rimraf build && npx tsc",
-    "start:dev": "npx tsc -w & nodemon build/index.js",
-    "serve": "npm run build && npm run start:dev"
+    "start": "npx tsc -w & nodemon build/index.js",
+    "serve": "npm run build && npm run start"
   },
   "keywords": [],
   "author": "",
