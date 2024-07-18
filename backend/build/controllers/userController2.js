@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const controller = (0, express_1.Router)();
+// NOTES ABOUT NEXT STEP: learn to add to database and use orm
 controller.get("/", (req, res) => {
     return res.send("hello bitch");
 });

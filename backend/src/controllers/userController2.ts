@@ -1,6 +1,8 @@
 import {Router, Request, Response} from "express";
 const controller = Router()
 
+// NOTES ABOUT NEXT STEP: learn to add to database and use orm
+
 controller.get("/", (req: Request, res: Response) => {
     return res.send("hello bitch")
 })
