@@ -10,12 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
-// I think this creates the psql table
+// Entities are the structure of the posgres tables
 let UserEntity = class UserEntity {
     id;
+    // Column() tells type orm this is the column of the table
     firstName;
     lastName;
     email;
+    favoriteColor;
 };
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
@@ -33,6 +35,10 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], UserEntity.prototype, "email", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], UserEntity.prototype, "favoriteColor", void 0);
 UserEntity = __decorate([
     (0, typeorm_1.Entity)("users")
 ], UserEntity);
