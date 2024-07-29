@@ -3,12 +3,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const typeorm_1 = __importDefault(require("../databases/postgres/typeorm"));
+const typeOrm_1 = __importDefault(require("../databases/postgres/typeOrm"));
 const appSetup = async (app) => {
     // set database connections
     try {
         await Promise.all([
-            (0, typeorm_1.default)(),
+            (0, typeOrm_1.default)(),
         ]);
         console.log("Databases connected successfully!");
         const APP_PORT = Number(process.env.APP_PORT) || 3000;

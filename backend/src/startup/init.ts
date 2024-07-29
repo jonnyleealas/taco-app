@@ -1,5 +1,5 @@
 import { Express } from "express";
-import typeORMConnect from "../databases/postgres/typeorm";
+import typeORMConnect from "../databases/postgres/typeOrm";
 const appSetup = async (app: Express) => {
   // set database connections
   try {

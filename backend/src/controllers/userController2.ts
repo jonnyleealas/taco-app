@@ -1,4 +1,5 @@
 import {Router, Request, Response} from "express";
+import { useTypeORM } from "../databases/postgres/typeOrm";
 const controller = Router()
 
 // NOTES ABOUT NEXT STEP: learn to add to database and use orm
