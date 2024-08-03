@@ -5,9 +5,10 @@ const controller = Router()
 
 // NOTES ABOUT NEXT STEP: learn to add to database and use orm
 
-controller.get("/", (req: Request, res: Response) => {
-    const test = req
-    return res.send(test)
+controller.get("/", async (req: Request, res: Response) => {
+    const users = await Person.find()
+
+    return res.json(users)
 })
 
 controller.get("/:id", (req: Request, res: Response) => {

@@ -4,9 +4,9 @@ const express_1 = require("express");
 const user_1 = require("../databases/postgres/entities/user");
 const controller = (0, express_1.Router)();
 // NOTES ABOUT NEXT STEP: learn to add to database and use orm
-controller.get("/", (req, res) => {
-    const test = req;
-    return res.send(test);
+controller.get("/", async (req, res) => {
+    const users = await user_1.Person.find();
+    return res.json(users);
 });
 controller.get("/:id", (req, res) => {
     return res.send("get by id");
