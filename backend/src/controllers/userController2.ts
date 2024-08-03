@@ -40,8 +40,11 @@ controller.put("/:id", (req: Request, res: Response) => {
     return res.send("update by id")
 })
 
-controller.delete("/:id", (req: Request, res: Response) => {
-    return res.send("delete by id")
+controller.delete("/:id", async (req: Request, res: Response) => {
+    const {id} = req.body
+    const user = await Person.findOneBy({id})
+    const deleteUser = await user?.remove()
+    return res.send("user delete")
 })
 
 

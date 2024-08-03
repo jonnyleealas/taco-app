@@ -30,7 +30,10 @@ controller.put("/", (req, res) => {
 controller.put("/:id", (req, res) => {
     return res.send("update by id");
 });
-controller.delete("/:id", (req, res) => {
-    return res.send("delete by id");
+controller.delete("/:id", async (req, res) => {
+    const { id } = req.body;
+    const user = await user_1.Person.findOneBy({ id });
+    const deleteUser = await user?.remove();
+    return res.send("user delete");
 });
 exports.default = controller;
