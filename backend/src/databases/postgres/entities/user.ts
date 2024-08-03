@@ -1,9 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
-import UserInterface from "../models/user";
+import { Entity, PrimaryGeneratedColumn, Column, BaseEntity } from "typeorm";
+
 
 // Entities are the structure of the posgres tables
 @Entity("users")
-export default class UserEntity implements UserInterface {
+export class Person extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 // Column() tells type orm this is the column of the table

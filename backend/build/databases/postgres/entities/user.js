@@ -9,9 +9,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Person = void 0;
 const typeorm_1 = require("typeorm");
 // Entities are the structure of the posgres tables
-let UserEntity = class UserEntity {
+let Person = class Person extends typeorm_1.BaseEntity {
     id;
     // Column() tells type orm this is the column of the table
     firstName;
@@ -19,27 +20,27 @@ let UserEntity = class UserEntity {
     email;
     favoriteColor;
 };
+exports.Person = Person;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
-], UserEntity.prototype, "id", void 0);
+], Person.prototype, "id", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], UserEntity.prototype, "firstName", void 0);
+], Person.prototype, "firstName", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], UserEntity.prototype, "lastName", void 0);
+], Person.prototype, "lastName", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], UserEntity.prototype, "email", void 0);
+], Person.prototype, "email", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], UserEntity.prototype, "favoriteColor", void 0);
-UserEntity = __decorate([
+], Person.prototype, "favoriteColor", void 0);
+exports.Person = Person = __decorate([
     (0, typeorm_1.Entity)("users")
-], UserEntity);
-exports.default = UserEntity;
+], Person);
