@@ -11,8 +11,10 @@ controller.get("/", async (req: Request, res: Response) => {
     return res.json(users)
 })
 
-controller.get("/:id", (req: Request, res: Response) => {
-    return res.send("get by id")
+controller.get("/:id", async (req: Request, res: Response) => {
+    const {id} = req.body
+    const user = await Person.findOneBy(id)
+    return res.json(user)
 })
 
 controller.post("/", async (req: Request, res: Response) => {

@@ -8,8 +8,10 @@ controller.get("/", async (req, res) => {
     const users = await user_1.Person.find();
     return res.json(users);
 });
-controller.get("/:id", (req, res) => {
-    return res.send("get by id");
+controller.get("/:id", async (req, res) => {
+    const { id } = req.body;
+    const user = await user_1.Person.findOneBy(id);
+    return res.json(user);
 });
 controller.post("/", async (req, res) => {
     const { firstName, lastName, email, favoriteColor } = req.body;
