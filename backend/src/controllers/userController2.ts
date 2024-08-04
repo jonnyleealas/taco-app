@@ -1,5 +1,6 @@
 import {Router, Request, Response} from "express";
 import { useTypeORM } from "../databases/postgres/typeOrm";
+import { DataSource } from "typeorm";
 import {Person} from "../databases/postgres/entities/user";
 const controller = Router()
 
@@ -32,9 +33,30 @@ controller.post("/", async (req: Request, res: Response) => {
     return res.json(newUser)
 })
 
-controller.put("/", (req: Request, res: Response) => {
-    return res.send("put")
-})
+controller.put("/:id", async (req: Request, res: Response) => {
+    const { id } = req.params;
+    
+    try {
+        // Find the existing user by ID
+        const user = await Person.findOneBy({ id: parseInt(id) });
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+
+        // Merge changes from the request body into the existing user object
+        const changes: Partial<Person> = req.body;
+        const updatedUser = { ...user, ...changes };
+
+        // Save the updated user
+        await Person.save(updatedUser);
+
+        return res.send("User updated successfully");
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send("An error occurred while updating the user");
+    }
+});
+
 
 controller.put("/:id", (req: Request, res: Response) => {
     return res.send("update by id")
