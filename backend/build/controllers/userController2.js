@@ -9,8 +9,8 @@ controller.get("/", async (req, res) => {
     return res.json(users);
 });
 controller.get("/:id", async (req, res) => {
-    const { id } = req.body;
-    const user = await user_1.Person.findOneBy(id);
+    const { id } = req.params;
+    const user = await user_1.Person.findOneBy({ id: parseInt(id) });
     return res.json(user);
 });
 controller.post("/", async (req, res) => {
@@ -44,12 +44,9 @@ controller.put("/:id", async (req, res) => {
         return res.status(500).send("An error occurred while updating the user");
     }
 });
-controller.put("/:id", (req, res) => {
-    return res.send("update by id");
-});
 controller.delete("/:id", async (req, res) => {
-    const { id } = req.body;
-    const user = await user_1.Person.findOneBy({ id });
+    const { id } = req.params;
+    const user = await user_1.Person.findOneBy({ id: parseInt(id) });
     const deleteUser = await user?.remove();
     return res.send("user delete");
 });

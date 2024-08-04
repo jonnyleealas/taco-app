@@ -13,8 +13,8 @@ controller.get("/", async (req: Request, res: Response) => {
 })
 
 controller.get("/:id", async (req: Request, res: Response) => {
-    const {id} = req.body
-    const user = await Person.findOneBy(id)
+    const {id} = req.params
+    const user = await Person.findOneBy({id: parseInt(id)})
     return res.json(user)
 })
 
@@ -58,13 +58,10 @@ controller.put("/:id", async (req: Request, res: Response) => {
 });
 
 
-controller.put("/:id", (req: Request, res: Response) => {
-    return res.send("update by id")
-})
 
 controller.delete("/:id", async (req: Request, res: Response) => {
-    const {id} = req.body
-    const user = await Person.findOneBy({id})
+    const {id} = req.params
+    const user = await Person.findOneBy({id: parseInt(id)})
     const deleteUser = await user?.remove()
     return res.send("user delete")
 })
