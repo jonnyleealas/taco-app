@@ -3,7 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const user_1 = require("../databases/postgres/entities/user");
 const controller = (0, express_1.Router)();
-// NOTES ABOUT NEXT STEP: learn to add to database and use orm
 controller.get("/", async (req, res) => {
     try {
         // fetch all users
