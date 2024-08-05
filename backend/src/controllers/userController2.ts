@@ -4,7 +4,7 @@ import { DataSource } from "typeorm";
 import { Person } from "../databases/postgres/entities/user";
 const controller = Router()
 
-// NOTES ABOUT NEXT STEP: learn to add to database and use orm
+
 
 controller.get("/", async (req: Request, res: Response) => {
 
