@@ -1,4 +1,5 @@
 import './App.css';
+import './components/newUserCard'
 
 function App() {
   return (
