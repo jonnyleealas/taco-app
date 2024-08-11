@@ -1,12 +1,14 @@
 import './App.css';
-import './components/newUserCard'
+import './components/newUser/newUser'
+import NewUser from './components/newUser/newUser';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-      <h1>hello world</h1>
-      </header>
+      
+        <NewUser />
+    
     </div>
   );
 }
