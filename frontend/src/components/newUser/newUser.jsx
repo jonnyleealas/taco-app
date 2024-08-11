@@ -6,13 +6,26 @@ function NewUser() {
             <h2>
                 New User
             </h2>
-            <input value= "first name" />
-            <input value= "last name" />
-            <input value= "email" />
-            <input value= "favorite color" />
-            <p>
-                Please enter new user info
-            </p>
+            <div>
+                <label>
+                    First Name
+                    <input type="text" placeholder="first name" />
+                </label>
+
+                <label>
+                    Last Name
+                    <input type="text" placeholder="Last Name" />
+                </label>
+                <label>
+                     Email
+                    <input type="text" placeholder="Email" />
+                </label>
+                <label>
+                    Favorite Color
+                    <input type="text" placeholder="Favorite Color" />
+                </label>
+                
+            </div>
         </div>
     )
 }
