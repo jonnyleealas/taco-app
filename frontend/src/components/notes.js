@@ -152,3 +152,5 @@
 
 
 // postgresql://postgres:54321@localhost:5432/postgres
+// PGSQL_URI=postgresql://postgres:54321@localhost:5432/postgres
+// APP_PORT=5000
