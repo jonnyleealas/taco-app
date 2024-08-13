@@ -148,3 +148,7 @@
 // handleChange Function: This function updates the specific property of the user object based on the input name and value.
 // Form Inputs: Each input has a name attribute corresponding to the properties in the user object. The value of each input is linked to the respective property in user, and changes are handled by the handleChange function.
 // This way, when the form is submitted, the user object will contain all the necessary information, and it will be sent to the server correctly.
+
+
+
+// postgresql://postgres:54321@localhost:5432/postgres
