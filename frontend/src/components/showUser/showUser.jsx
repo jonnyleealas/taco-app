@@ -1,28 +1,49 @@
-// import {useState} from "react"
+import {useState, useEffect} from "react"
 
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+const getUsers = "http://localhost:5000/api/v1/users"
+
 function ShowUser() {
-   
+    const [users, setUsers] = useState([]); // Initialize as an array
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            const response = await fetch(getUsers);
+            const usersData = await response.json(); // Ensure the API returns an array
+            setUsers(usersData);
+        };
+
+        fetchUsers();
+    }, []);
+
 
     return (
-        <>
-       
-      <Navbar bg="primary" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-
-      
-        </>
+        <div>
+    <ul>
+        {users.map((user) => {
+            return (
+            
+                    < div key={user.id}>
+                        <h1>
+                            {user.firstName} {user.lastName}
+                        </h1>
+                        <h1>
+                            {user.email}
+                        </h1>
+                        <h1>
+                            {user.favoriteColor}
+                        </h1>
+                    </div>
+            
+        
+        )
+        })}
+    </ul>
+   
+        </div>
     )
 }
 

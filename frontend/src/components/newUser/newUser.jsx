@@ -16,6 +16,7 @@ function NewUser() {
             [name]: value
         })
     }
+    
     const onSubmitForm = async (e) => {
         e.preventDefault()
 
