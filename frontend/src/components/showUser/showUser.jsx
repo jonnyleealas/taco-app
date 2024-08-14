@@ -21,48 +21,23 @@ function ShowUser() {
 
     return (
         <div>
-            <ul>
+        
                 {users.map((user) => {
                     return (
                         <>
-
                             <Card style={{ width: '18rem' }}>
-                               
                                 <Card.Body>
                                     <Card.Title>{user.firstName} {user.lastName}</Card.Title>
-                                    <Card.Text>
-                                    
-                              
-                                
-                                    </Card.Text>
                                 </Card.Body>
                                 <ListGroup className="list-group-flush">
                                     <ListGroup.Item> {user.email}</ListGroup.Item>
                                     <ListGroup.Item> {user.favoriteColor}</ListGroup.Item>
                                 </ListGroup>
-                                
                             </Card>
-
-
-
-
-
-
-
-
-                            < div key={user.id}>
-
-                                
-                                <h1>
-                                   
-                                </h1>
-                            </div>
                         </>
-
-
                     )
                 })}
-            </ul>
+           
 
         </div>
     )
