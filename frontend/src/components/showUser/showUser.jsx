@@ -1,8 +1,7 @@
-import {useState, useEffect} from "react"
+import { useState, useEffect } from "react"
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 
 const getUsers = "http://localhost:5000/api/v1/users"
 
@@ -22,27 +21,49 @@ function ShowUser() {
 
     return (
         <div>
-    <ul>
-        {users.map((user) => {
-            return (
-            
-                    < div key={user.id}>
-                        <h1>
-                            {user.firstName} {user.lastName}
-                        </h1>
-                        <h1>
-                            {user.email}
-                        </h1>
-                        <h1>
-                            {user.favoriteColor}
-                        </h1>
-                    </div>
-            
-        
-        )
-        })}
-    </ul>
-   
+            <ul>
+                {users.map((user) => {
+                    return (
+                        <>
+
+                            <Card style={{ width: '18rem' }}>
+                               
+                                <Card.Body>
+                                    <Card.Title>{user.firstName} {user.lastName}</Card.Title>
+                                    <Card.Text>
+                                    
+                              
+                                
+                                    </Card.Text>
+                                </Card.Body>
+                                <ListGroup className="list-group-flush">
+                                    <ListGroup.Item> {user.email}</ListGroup.Item>
+                                    <ListGroup.Item> {user.favoriteColor}</ListGroup.Item>
+                                </ListGroup>
+                                
+                            </Card>
+
+
+
+
+
+
+
+
+                            < div key={user.id}>
+
+                                
+                                <h1>
+                                   
+                                </h1>
+                            </div>
+                        </>
+
+
+                    )
+                })}
+            </ul>
+
         </div>
     )
 }
