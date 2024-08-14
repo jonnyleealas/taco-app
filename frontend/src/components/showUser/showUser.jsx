@@ -21,7 +21,6 @@ function ShowUser() {
 
     return (
         <div>
-        
                 {users.map((user) => {
                     return (
                         <>
@@ -37,8 +36,6 @@ function ShowUser() {
                         </>
                     )
                 })}
-           
-
         </div>
     )
 }
