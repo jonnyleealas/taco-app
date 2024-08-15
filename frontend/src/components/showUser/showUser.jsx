@@ -1,43 +1,39 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import { useParams } from 'react-router-dom';
 
-
-const getUsers = "http://localhost:5000/api/v1/users"
+const getUserById = (id) => `http://localhost:5000/api/v1/users/${id}`;
 
 function ShowUser() {
-    const [users, setUsers] = useState([]); // Initialize as an array
+    const [user, setUser] = useState(null); // Initialize as null to handle single user
+    const { id } = useParams(); // Get the `id` from the route parameters
 
     useEffect(() => {
-        const fetchUsers = async () => {
-            const response = await fetch(getUsers);
-            const usersData = await response.json(); // Ensure the API returns an array
-            setUsers(usersData);
+        const fetchUser = async () => {
+            const response = await fetch(getUserById(id));
+            const userData = await response.json();
+            setUser(userData);
         };
 
-        fetchUsers();
-    }, []);
-
+        fetchUser();
+    }, [id]); // Dependency array includes `id` to refetch if it changes
 
     return (
         <div>
-                {users.map((user) => {
-                    return (
-                        <>
-                            <Card style={{ width: '18rem' }}>
-                                <Card.Body>
-                                    <Card.Title>{user.firstName} {user.lastName}</Card.Title>
-                                </Card.Body>
-                                <ListGroup className="list-group-flush">
-                                    <ListGroup.Item> {user.email}</ListGroup.Item>
-                                    <ListGroup.Item> {user.favoriteColor}</ListGroup.Item>
-                                </ListGroup>
-                            </Card>
-                        </>
-                    )
-                })}
+            {user && (
+                <Card style={{ width: '18rem' }}>
+                    <Card.Body>
+                        <Card.Title>{user.firstName} {user.lastName}</Card.Title>
+                    </Card.Body>
+                    <ListGroup className="list-group-flush">
+                        <ListGroup.Item>{user.email}</ListGroup.Item>
+                        <ListGroup.Item>{user.favoriteColor}</ListGroup.Item>
+                    </ListGroup>
+                </Card>
+            )}
         </div>
-    )
+    );
 }
 
 export default ShowUser
