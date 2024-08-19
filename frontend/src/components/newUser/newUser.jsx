@@ -9,7 +9,7 @@ function NewUser() {
         favoriteColor: "",
     });
 
-    const [error, setError] = useState(""); // State to manage error message
+    const [message, setMessage] = useState(""); // State to manage success/error messages
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -21,7 +21,7 @@ function NewUser() {
 
     const onSubmitForm = async (e) => {
         e.preventDefault();
-        setError(""); // Reset error message on new submission
+        setMessage(""); // Reset message on new submission
 
         try {
             const response = await fetch("http://localhost:5000/api/v1/users", {
@@ -33,15 +33,26 @@ function NewUser() {
             if (response.status === 400) {
                 const data = await response.json();
                 if (data.error === "Email already exists") {
-                    setError("Email already exists"); // Set the error message
+                    setMessage("Email already exists"); // Set the error message
                 }
             } else if (response.ok) {
-                console.log("User created successfully");
-                // You can reset the form or give success feedback here
+                // Reset the form and show success message
+                setUser({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    favoriteColor: "",
+                });
+                setMessage("Create user successful");
+
+                // Remove the success message after 10 seconds
+                setTimeout(() => {
+                    setMessage("");
+                }, 10000);
             }
         } catch (e) {
             console.log(e);
-            setError("An error occurred while creating the user");
+            setMessage("An error occurred while creating the user");
         }
     };
 
@@ -91,8 +102,8 @@ function NewUser() {
                         onChange={handleChange}
                     />
                 </label>
-                {error && <p style={{ color: "red" }}>{error}</p>} {/* Display error message */}
-                <input type="submit" placeholder="Submit" />
+                {message && <p style={{ color: message === "Create user successful" ? "green" : "red" }}>{message}</p>} {/* Display message */}
+                <input type="submit" value="Submit" />
             </div>
         </form>
     );
