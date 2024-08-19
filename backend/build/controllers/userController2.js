@@ -36,6 +36,7 @@ controller.post("/", async (req, res) => {
         // Check if the email already exists
         const existingUser = await user_1.Person.findOneBy({ email });
         if (existingUser) {
+            console.log("email already exists");
             return res.status(400).json({ error: "Email already exists" });
         }
         // Create a new user with the provided email

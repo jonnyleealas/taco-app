@@ -5,7 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 const getUsers = "http://localhost:5000/api/v1/users"
 
-function ShowUser() {
+function ShowUsers() {
     const [users, setUsers] = useState([]); // Initialize as an array
 
     useEffect(() => {
