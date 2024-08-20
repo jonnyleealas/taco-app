@@ -7,4 +7,3 @@ export default interface UserInterface extends BaseEntity{
 	lastName: string;
 	email: string;
   }
-f

@@ -1,6 +1,6 @@
 import './App.css';
-import './components/newUser/newUser'
-import NewUser from './components/newUser/newUser';
+import './components/signUp/SignUp'
+import SignUp from './components/signUp/SignUp';
 import ShowUsers from './components/ShowUsers/ShowUsers';
 // import ShowUser from './components/showUser/showUser';
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       
-        <NewUser />
+        <SignUp />
         {/* <ShowUsers /> */}
         {/* <ShowUser /> */}
     

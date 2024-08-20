@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./newUser.css";
+import "./signUp.css";
 
-function NewUser() {
+function SignUp() {
     const [user, setUser] = useState({
         firstName: "",
         lastName: "",
@@ -109,4 +109,4 @@ function NewUser() {
     );
 }
 
-export default NewUser;
+export default SignUp;

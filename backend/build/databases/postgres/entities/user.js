@@ -15,16 +15,20 @@ const typeorm_1 = require("typeorm");
 let Person = class Person extends typeorm_1.BaseEntity {
     id;
     // Column() tells type orm this is the column of the table
+    password;
     firstName;
     lastName;
     email;
-    favoriteColor;
 };
 exports.Person = Person;
 __decorate([
     (0, typeorm_1.PrimaryGeneratedColumn)(),
     __metadata("design:type", Number)
 ], Person.prototype, "id", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", String)
+], Person.prototype, "password", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
@@ -37,10 +41,6 @@ __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)
 ], Person.prototype, "email", void 0);
-__decorate([
-    (0, typeorm_1.Column)(),
-    __metadata("design:type", String)
-], Person.prototype, "favoriteColor", void 0);
 exports.Person = Person = __decorate([
     (0, typeorm_1.Entity)("users")
 ], Person);

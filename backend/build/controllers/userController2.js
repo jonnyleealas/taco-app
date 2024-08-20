@@ -1,7 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
 const user_1 = require("../databases/postgres/entities/user");
+const bcrypt_1 = __importDefault(require("bcrypt"));
 const controller = (0, express_1.Router)();
 controller.get("/", async (req, res) => {
     try {
@@ -31,7 +35,8 @@ controller.get("/:id", async (req, res) => {
     }
 });
 controller.post("/", async (req, res) => {
-    const { firstName, lastName, email, favoriteColor } = req.body;
+    const { firstName, lastName, email, password } = req.body;
+    const hash = await bcrypt_1.default.hash(password, 10);
     try {
         // Check if the email already exists
         const existingUser = await user_1.Person.findOneBy({ email });
@@ -44,7 +49,7 @@ controller.post("/", async (req, res) => {
             firstName,
             lastName,
             email,
-            favoriteColor,
+            password,
         });
         await newUser.save();
         return res.status(201).json(newUser);

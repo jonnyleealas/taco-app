@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { Person } from "../databases/postgres/entities/user";
+import bcrypt from "bcrypt";
 
 const controller = Router();
 
@@ -32,6 +33,7 @@ controller.get("/:id", async (req: Request, res: Response) => {
 
 controller.post("/", async (req: Request, res: Response) => {
     const { firstName, lastName, email, password } = req.body;
+    const hash = await bcrypt.hash(password, 10)
 
     try {
         // Check if the email already exists
@@ -47,7 +49,7 @@ controller.post("/", async (req: Request, res: Response) => {
             firstName,
             lastName,
             email,
-            password,
+            password: hash,
         });
 
         await newUser.save();
