@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./signUp.css";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons for showing/hiding password
 
 function SignUp() {
     const [user, setUser] = useState({
@@ -10,6 +11,7 @@ function SignUp() {
     });
 
     const [message, setMessage] = useState(""); // State to manage success/error messages
+    const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -17,6 +19,10 @@ function SignUp() {
             ...user,
             [name]: value,
         });
+    };
+
+    const handlePasswordToggle = () => {
+        setShowPassword(!showPassword);
     };
 
     const onSubmitForm = async (e) => {
@@ -108,13 +114,22 @@ function SignUp() {
                 </label>
                 <label>
                     Password
-                    <input
-                        type="password" // Correct input type for passwords
-                        placeholder="Password"
-                        name="password"
-                        value={user.password}
-                        onChange={handleChange}
-                    />
+                    <div className="password-container">
+                        <input
+                            type={showPassword ? "text" : "password"} // Toggle between text and password
+                            placeholder="Password"
+                            name="password"
+                            value={user.password}
+                            onChange={handleChange}
+                        />
+                        <button
+                            type="button"
+                            className="password-toggle"
+                            onClick={handlePasswordToggle}
+                        >
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </button>
+                    </div>
                 </label>
 
                 {message && <p style={{ color: message === "Create user successful" ? "green" : "red" }}>{message}</p>} {/* Display message */}

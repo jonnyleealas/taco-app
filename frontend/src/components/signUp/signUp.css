@@ -1,17 +1,61 @@
+/* Form container styling */
+.newUserCard {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 400px; /* Fixed width for the form container */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  margin-top: 50px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* General label styling */
+label {
+  display: block; /* Make sure each label is on a new line */
+  margin-bottom: 8px; /* Space between label and input */
+  font-size: 16px;
+}
+
 /* General input styling */
 input[type=text], input[type=email], input[type=password], select {
-  width: 100%; /* Full width of the container */
+  width: calc(100% - 24px); /* Adjust width to account for padding and border */
   padding: 12px 20px; /* Ensure consistent padding */
   margin: 8px 0;
+  display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box; /* Include padding and border in the element's total width */
+  box-sizing: border-box; /* Ensure padding and border are included in width */
   font-size: 16px;
+}
+
+input:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Soft green shadow */
+}
+
+
+/* Password container styling */
+.password-container {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #696d69;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none; /* Remove default button outline */
 }
 
 /* Submit button styling */
 input[type=submit] {
-  width: 100%; /* Full width of the container */
+  width: calc(100% - 24px); /* Same width adjustment as other inputs */
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -20,29 +64,11 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
-  box-sizing: border-box; /* Include padding in the element's total width */
+  box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 input[type=submit]:hover {
   background-color: #45a049;
-}
-
-label {
-  display: block; /* Make sure each label is on a new line */
-  margin-bottom: 8px; /* Space between label and input */
-  font-size: 16px;
-}
-
-/* Form container styling */
-.newUserCard {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-  width: 400px; /* Control the overall width of the form */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin: auto;
-  margin-top: 50px;
-  box-sizing: border-box; /* Include padding and border in the container's total width */
 }
 
 /* Error message styling */
