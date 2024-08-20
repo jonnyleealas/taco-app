@@ -6,7 +6,7 @@ function NewUser() {
         firstName: "",
         lastName: "",
         email: "",
-        favoriteColor: "",
+        password: "",
     });
 
     const [message, setMessage] = useState(""); // State to manage success/error messages
@@ -41,7 +41,7 @@ function NewUser() {
                     firstName: "",
                     lastName: "",
                     email: "",
-                    favoriteColor: "",
+                    password: "",
                 });
                 setMessage("Create user successful");
 
@@ -96,9 +96,9 @@ function NewUser() {
                     Favorite Color
                     <input
                         type="text"
-                        placeholder="Favorite Color"
-                        name="favoriteColor"
-                        value={user.favoriteColor}
+                        placeholder="Password"
+                        name="password"
+                        value={user.password}
                         onChange={handleChange}
                     />
                 </label>

@@ -7,6 +7,9 @@ export class Person extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 // Column() tells type orm this is the column of the table
+@Column()
+  password!: string;
+
   @Column()
   firstName!: string;
 
@@ -15,7 +18,4 @@ export class Person extends BaseEntity {
 
   @Column()
   email!: string;
-
-  @Column()
-  favoriteColor!: string;
 }

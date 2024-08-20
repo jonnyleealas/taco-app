@@ -31,7 +31,7 @@ controller.get("/:id", async (req: Request, res: Response) => {
 });
 
 controller.post("/", async (req: Request, res: Response) => {
-    const { firstName, lastName, email, favoriteColor } = req.body;
+    const { firstName, lastName, email, password } = req.body;
 
     try {
         // Check if the email already exists
@@ -47,7 +47,7 @@ controller.post("/", async (req: Request, res: Response) => {
             firstName,
             lastName,
             email,
-            favoriteColor,
+            password,
         });
 
         await newUser.save();
