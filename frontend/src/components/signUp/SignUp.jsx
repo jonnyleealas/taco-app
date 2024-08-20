@@ -32,7 +32,7 @@ function SignUp() {
 
             if (response.status === 400) {
                 const data = await response.json();
-                
+
                 if (data.error === "Email already exists") {
                     return setMessage("Email already exists"); // Set the error message
                 }
@@ -41,14 +41,14 @@ function SignUp() {
                     setMessage(`${data.error}`)
                 }
 
-                if(data.error === "Cannot contain any blank spaces."){
+                if (data.error === "Cannot contain any blank spaces.") {
                     setMessage(`${data.error}`)
                 }
 
-                if(data.error === "Password must be at least 8 characters long."){
+                if (data.error === "Password must be at least 8 characters long.") {
                     setMessage(`${data.error}`)
                 }
-                
+
             } else if (response.ok) {
                 // Reset the form and show success message
                 setUser({
@@ -107,15 +107,16 @@ function SignUp() {
                     />
                 </label>
                 <label>
-                    Favorite Color
+                    Password
                     <input
-                        type="text"
+                        type="password" // Correct input type for passwords
                         placeholder="Password"
                         name="password"
                         value={user.password}
                         onChange={handleChange}
                     />
                 </label>
+
                 {message && <p style={{ color: message === "Create user successful" ? "green" : "red" }}>{message}</p>} {/* Display message */}
                 <input type="submit" value="Submit" />
             </div>

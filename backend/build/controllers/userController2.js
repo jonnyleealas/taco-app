@@ -36,6 +36,33 @@ controller.get("/:id", async (req, res) => {
 });
 controller.post("/", async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
+    // Function to validate password
+    const validatePasswordLength = (password) => {
+        const isValidLength = password.length >= 8; // Checks for minimum length
+        return isValidLength;
+    };
+    const validatePasswordSpaces = (password) => {
+        const noBlankEdges = password.trim() === password; // Ensures no leading/trailing spaces
+        const noSpaces = !/\s/.test(password); // Ensures there are no spaces at all
+        return noBlankEdges && noSpaces;
+    };
+    if (!validatePasswordLength(password) && !validatePasswordSpaces(password)) {
+        return res.status(400).json({
+            error: "Password must be at least 8 characters long, and cannot contain any blank spaces."
+        });
+    }
+    // Validate the password
+    if (!validatePasswordLength(password)) {
+        return res.status(400).json({
+            error: "Password must be at least 8 characters long."
+        });
+    }
+    // Validate if password has spaces
+    if (!validatePasswordSpaces(password)) {
+        return res.status(400).json({
+            error: "Cannot contain any blank spaces."
+        });
+    }
     const hash = await bcrypt_1.default.hash(password, 10);
     try {
         // Check if the email already exists
@@ -49,7 +76,7 @@ controller.post("/", async (req, res) => {
             firstName,
             lastName,
             email,
-            password,
+            password: hash,
         });
         await newUser.save();
         return res.status(201).json(newUser);
