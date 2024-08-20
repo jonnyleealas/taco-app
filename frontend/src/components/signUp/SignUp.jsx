@@ -35,6 +35,9 @@ function SignUp() {
                 if (data.error === "Email already exists") {
                     setMessage("Email already exists"); // Set the error message
                 }
+                if(data.error === "Password must be at least 8 characters long, contain letters, numbers, and/or symbols, and cannot start or end with a blank space."){
+                    setMessage("Password must be at least 8 characters long, contain letters, numbers, and/or symbols, and cannot start or end with a blank space.")
+                }
             } else if (response.ok) {
                 // Reset the form and show success message
                 setUser({

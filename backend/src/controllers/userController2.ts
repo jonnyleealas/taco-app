@@ -33,14 +33,32 @@ controller.get("/:id", async (req: Request, res: Response) => {
 
 controller.post("/", async (req: Request, res: Response) => {
     const { firstName, lastName, email, password } = req.body;
-    const hash = await bcrypt.hash(password, 10)
+
+    // Function to validate password
+    const validatePassword = (password: string) => {
+        const isValidLength = password.length >= 8;
+        const hasLetter = /[a-zA-Z]/.test(password);
+        const hasNumberOrSymbol = /[0-9!@#$%^&*(),.?":{}|<>]/.test(password);
+        const noBlankEdges = password.trim() === password;
+
+        return isValidLength && hasLetter && hasNumberOrSymbol && noBlankEdges;
+    };
+
+    // Validate the password
+    if (!validatePassword(password)) {
+        return res.status(400).json({
+            error: "Password must be at least 8 characters long, contain letters, numbers, and/or symbols, and cannot start or end with a blank space."
+        });
+    }
+
+    const hash = await bcrypt.hash(password, 10);
 
     try {
         // Check if the email already exists
         const existingUser = await Person.findOneBy({ email });
 
         if (existingUser) {
-            console.log("email already exists")
+            console.log("email already exists");
             return res.status(400).json({ error: "Email already exists" });
         }
 
@@ -60,6 +78,7 @@ controller.post("/", async (req: Request, res: Response) => {
         return res.status(500).send("An error occurred while creating the user");
     }
 });
+
 
 controller.put("/:id", async (req: Request, res: Response) => {
     const { id } = req.params;
