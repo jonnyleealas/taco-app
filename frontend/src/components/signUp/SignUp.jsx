@@ -32,12 +32,23 @@ function SignUp() {
 
             if (response.status === 400) {
                 const data = await response.json();
+                
                 if (data.error === "Email already exists") {
                     return setMessage("Email already exists"); // Set the error message
                 }
+
                 if (data.error === "Password must be at least 8 characters long, and cannot contain any blank spaces.") {
                     setMessage(`${data.error}`)
                 }
+
+                if(data.error === "Cannot contain any blank spaces."){
+                    setMessage(`${data.error}`)
+                }
+
+                if(data.error === "Password must be at least 8 characters long."){
+                    setMessage(`${data.error}`)
+                }
+                
             } else if (response.ok) {
                 // Reset the form and show success message
                 setUser({
