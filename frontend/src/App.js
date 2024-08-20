@@ -3,6 +3,7 @@ import './components/signUp/SignUp'
 import SignUp from './components/signUp/SignUp';
 import ShowUsers from './components/ShowUsers/ShowUsers';
 // import ShowUser from './components/showUser/showUser';
+import Login from "./components/login/login-card/login-card"
 
 
 
@@ -10,8 +11,8 @@ import ShowUsers from './components/ShowUsers/ShowUsers';
 function App() {
   return (
     <div className="App">
-      
-        <SignUp />
+        <Login />
+        {/* <SignUp /> */}
         {/* <ShowUsers /> */}
         {/* <ShowUser /> */}
     
@@ -20,3 +21,4 @@ function App() {
 }
 
 export default App;
+
