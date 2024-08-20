@@ -36,18 +36,17 @@ controller.post("/", async (req: Request, res: Response) => {
 
     // Function to validate password
     const validatePassword = (password: string) => {
-        const isValidLength = password.length >= 8;
-        const hasLetter = /[a-zA-Z]/.test(password);
-        const hasNumberOrSymbol = /[0-9!@#$%^&*(),.?":{}|<>]/.test(password);
-        const noBlankEdges = password.trim() === password;
-
-        return isValidLength && hasLetter && hasNumberOrSymbol && noBlankEdges;
+        const isValidLength = password.length >= 8; // Checks for minimum length
+        const noBlankEdges = password.trim() === password; // Ensures no leading/trailing spaces
+        const noSpaces = !/\s/.test(password); // Ensures there are no spaces at all
+    
+        return isValidLength && noBlankEdges && noSpaces;
     };
-
+    
     // Validate the password
     if (!validatePassword(password)) {
         return res.status(400).json({
-            error: "Password must be at least 8 characters long, contain letters, numbers, and/or symbols, and cannot start or end with a blank space."
+            error: "Password must be at least 8 characters long, and cannot contain any blank spaces."
         });
     }
 
