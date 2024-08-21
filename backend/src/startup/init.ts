@@ -1,8 +1,8 @@
 import express, { Express } from 'express';
 import dotenv from 'dotenv';
 import typeORMConnect from '../databases/postgres/typeOrm'; // Database connection function
-import authController from './controllers/authController'; // Authentication routes
-import userController from './controllers/userController'; // User routes
+import authController from '../controllers/authController'; // Authentication routes
+import userController from '../controllers/userController2'; // User routes
 
 // Initialize environment variables from .env file
 dotenv.config();
