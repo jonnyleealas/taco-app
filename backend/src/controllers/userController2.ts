@@ -30,7 +30,7 @@ controller.get("/:id", async (req: Request, res: Response) => {
         return res.status(500).send("An error has occurred while fetching user");
     }
 });
-
+// Will need to create sign up controller and remove this post request from here
 controller.post("/", async (req: Request, res: Response) => {
     const { firstName, lastName, email, password } = req.body;
 

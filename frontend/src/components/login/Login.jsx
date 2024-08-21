@@ -4,8 +4,6 @@ import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons for showing/
 
 function Login() {
     const [user, setUser] = useState({
-        firstName: "",
-        lastName: "",
         email: "",
         password: "",
     });
@@ -30,45 +28,38 @@ function Login() {
         setMessage(""); // Reset message on new submission
 
         try {
-            // Make a GET request to check if the email exists and the password is correct
-            const response = await fetch(`http://localhost:5000/api/v1/users?email=${encodeURIComponent(user.email)}&password=${encodeURIComponent(user.password)}`, {
-                method: "GET",
-                headers: { "Content-Type": "application/json" },
+            // Make a POST request to the backend login route
+            const response = await fetch('http://localhost:5000/api/v1/auth/login', {  // Updated URL
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(user),
             });
 
             if (response.status === 400) {
                 const data = await response.json();
-
-                if (data.error === "Email does not exist") {
-                    return setMessage("Email does not exist"); // Set the error message
-                }
-
-                if (data.error === "Incorrect password") {
-                    return setMessage("Incorrect password"); // Set the error message
-                }
+                setMessage(data.error || 'Invalid credentials'); // Set error message
             } else if (response.ok) {
                 const data = await response.json();
+                setMessage('Login successful');
+                
+                // Clear form and redirect or perform other actions as needed
+                setUser({
+                    email: "",
+                    password: "",
+                });
 
-                if (data.success) {
-                    setMessage("Login successful");
-                    
-                    // Clear form and redirect or perform other actions as needed
-                    setUser({
-                        email: "",
-                        password: "",
-                    });
-
-                    // Remove the success message after 10 seconds
-                    setTimeout(() => {
-                        setMessage("");
-                    }, 10000);
-                } else {
-                    setMessage("An unexpected error occurred");
-                }
+                // Remove the success message after 10 seconds
+                setTimeout(() => {
+                    setMessage("");
+                }, 10000);
+            } else {
+                setMessage('An unexpected error occurred');
             }
         } catch (e) {
             console.log(e);
-            setMessage("An error occurred while checking the user");
+            setMessage('An error occurred while logging in');
         }
     };
 
@@ -106,7 +97,7 @@ function Login() {
                     </div>
                 </label>
            
-                {message && <p style={{ color: message === "Login successful" ? "green" : "red" }}>{message}</p>} {/* Display message */}
+                {message && <p style={{ color: message === 'Login successful' ? 'green' : 'red' }}>{message}</p>} {/* Display message */}
                 <input type="submit" value="Login" />
                 <div>Don't have an account? <a href="/signup">Sign Up</a></div>
             </div>

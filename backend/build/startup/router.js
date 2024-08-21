@@ -4,8 +4,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const userController2_1 = __importDefault(require("../controllers/userController2"));
-const routerSetup = (app) => app.get("/", async (req, res) => {
-    res.send("Hello world!");
-})
-    .use("/api/v1/users", userController2_1.default);
+const authController_1 = __importDefault(require("../controllers/authController"));
+const routerSetup = (app) => {
+    // Setup a basic route
+    app.get('/', async (req, res) => {
+        res.send('Hello world!');
+    });
+    // Setup routes for userController2
+    app.use('/api/v1/users', userController2_1.default);
+    // Setup routes for authController
+    app.use('/api/v1/auth', authController_1.default);
+};
 exports.default = routerSetup;
