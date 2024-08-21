@@ -1,0 +1,79 @@
+/* Form container styling */
+.newUserCard {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px; /* Padding on all sides */
+  width: 400px; /* Fixed width for the form container */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  margin-top: 50px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+/* General label styling */
+label {
+  display: block; /* Make sure each label is on a new line */
+  margin-bottom: 8px; /* Space between label and input */
+  font-size: 16px;
+}
+
+/* General input styling */
+input[type=text], input[type=email], input[type=password], select {
+  width: 100%; /* Take full width of the container */
+  padding: 12px 20px; /* Consistent padding */
+  margin: 8px 0;
+  display: block; /* Make sure inputs are block level */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+  font-size: 16px;
+}
+
+/* Password container styling */
+.password-container {
+  position: relative;
+}
+
+/* Password toggle button styling */
+.password-toggle {
+  position: absolute;
+  right: 10px; /* Adjust if necessary */
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #959e96;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none; /* Remove default button outline */
+}
+
+/* Submit button styling */
+input[type=submit] {
+  width: 100%; /* Take full width of the container */
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Error message styling */
+p {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Focus state for inputs */
+input:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Soft green shadow */
+}

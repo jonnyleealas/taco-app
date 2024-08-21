@@ -1,18 +1,15 @@
 import './App.css';
 import './components/signUp/SignUp'
 import SignUp from './components/signUp/SignUp';
-import ShowUsers from './components/ShowUsers/ShowUsers';
+import ShowUsers from './components/showUsers/ShowUsers';
 // import ShowUser from './components/showUser/showUser';
-import Login from "./components/login/login-card/login-card"
-
-
-
+import Login from './components/login/Login';
 
 function App() {
   return (
     <div className="App">
         <Login />
-        {/* <SignUp /> */}
+        <SignUp />
         {/* <ShowUsers /> */}
         {/* <ShowUser /> */}
     
