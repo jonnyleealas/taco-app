@@ -31,7 +31,7 @@ controller.get("/:id", async (req: Request, res: Response) => {
     }
 });
 // Will need to create sign up controller and remove this post request from here
-controller.post("/", async (req: Request, res: Response) => {
+controller.post("/signup", async (req: Request, res: Response) => {
     const { firstName, lastName, email, password } = req.body;
 
     // Function to validate password

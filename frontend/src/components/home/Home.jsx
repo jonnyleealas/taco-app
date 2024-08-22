@@ -12,4 +12,4 @@ function Home(){
        
 }
 
-export default SignUp;
+export default Home;
