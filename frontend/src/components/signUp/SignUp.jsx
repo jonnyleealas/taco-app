@@ -30,7 +30,7 @@ function SignUp() {
         setMessage(""); // Reset message on new submission
 
         try {
-            const response = await fetch("http://localhost:5000/api/v1/users", {
+            const response = await fetch("http://localhost:5000/api/v1/auth/signup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(user),

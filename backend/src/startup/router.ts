@@ -15,9 +15,6 @@ const routerSetup = (app: Express) => {
   // Setup routes for authController
   app.use('/api/v1/auth', authController);
 
-  // Route for signup
-  app.use('/api/v1/users', userController2)
-
   // Home Controller
   app.use('/api/v1/home', homeController)
 };
