@@ -1,15 +1,16 @@
-import { useState } from "react";
-import "./home.css";
+import './home.css';  // Import custom styles for the home page
+import Header from './Header/Header';  // Correctly import Header component
+import Main from './Main/Main';        // Correctly import Main component
+import Footer from './Footer/Footer';  // Correctly import Footer component
 
-
-function Home(){
-
-    return (
-    <>
-    <h1>Home</h1>
-    </>
-    )
-       
+function Home() {
+  return (
+    <div className="home">
+      <Header />  {/* Render the Header component */}
+      <Main />    {/* Render the Main component */}
+      <Footer />  {/* Render the Footer component */}
+    </div>
+  );
 }
 
 export default Home;

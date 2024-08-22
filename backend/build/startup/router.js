@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const userController2_1 = __importDefault(require("../controllers/userController2"));
+const userController_1 = __importDefault(require("../controllers/userController"));
 const authController_1 = __importDefault(require("../controllers/authController"));
 const homeController_1 = __importDefault(require("../controllers/homeController"));
 const routerSetup = (app) => {
@@ -12,7 +12,7 @@ const routerSetup = (app) => {
         res.send('Hello world!');
     });
     // Setup routes for userController2
-    app.use('/api/v1/users', userController2_1.default);
+    app.use('/api/v1/users', userController_1.default);
     // Setup routes for authController
     app.use('/api/v1/auth', authController_1.default);
     // Home Controller

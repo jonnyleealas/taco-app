@@ -1,145 +1,73 @@
-// import { Router, Request, Response } from "express";
-// import { useTypeORM } from "../databases/postgres/typeOrm";
-// import UserEntity from "../databases/postgres/entities/user";
-// import { DataSource, ObjectLiteral } from "typeorm";
-// import PostUserRequest from "../databases/postgres/models/PostUserRequest";
-// import ErrorObject from "../databases/postgres/models/ErrorObject";
+import { Router, Request, Response } from "express";
+import { Person } from "../databases/postgres/entities/user";
+import bcrypt from "bcrypt";
 
-// let typeORMDB: DataSource;
-// const controller = Router();
+const controller = Router();
 
-// controller.post(
-//   "/",
-//   async (
-//     req: Omit<Request, "body"> & { body: PostUserRequest },
-//     res: Response<UserEntity | ErrorObject>
-//   ) => {
-//     const newUser = new UserEntity();
-//     const { firstName, lastName } = req.body;
-//     newUser.firstName = firstName;
-//     newUser.lastName = lastName;
-//     await typeORMDB.manager.transaction(async () => {
-//       const savedUser = await useTypeORM(UserEntity).save(newUser);
-//       res.status(201).send(savedUser);
-//     });
-//   }
-// );
+controller.get("/", async (req: Request, res: Response) => {
+    try {
+        const users = await Person.find();
+        if (users.length === 0) {
+            return res.status(404).send("No users found");
+        }
+        return res.json(users);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send("An error has occurred while fetching users");
+    }
+});
 
-// controller.post(
-//   "/getOrCreateUserByEmail",
-//   async (
-//     req: Omit<Request, "body"> & { body: PostUserRequest },
-//     res: Response<ObjectLiteral | ErrorObject>
-//   ) => {
+controller.get("/:id", async (req: Request, res: Response) => {
+    const { id } = req.params;
+    try {
+        const user = await Person.findOneBy({ id: parseInt(id) });
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+        return res.json(user);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send("An error has occurred while fetching user");
+    }
+});
 
-//     const { firstName, lastName, email } = req.body;
+controller.put("/:id", async (req: Request, res: Response) => {
+    const { id } = req.params;
 
-//     const foundUser = await useTypeORM(UserEntity).findOneBy({ email });
-//     if (foundUser) {
-//       res.status(200).send(foundUser);
-//     } else {
+    try {
+        const user = await Person.findOneBy({ id: parseInt(id) });
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
 
-//       const newUser = new UserEntity();
-//       newUser.firstName = firstName;
-//       newUser.lastName = lastName;
-//       newUser.email = email;
-//       console.log('typeORMDB? ', typeORMDB);
+        const changes: Partial<Person> = req.body;
+        const updatedUser = { ...user, ...changes };
 
-//       // await typeORMDB.manager.transaction(async () => {
-//       const savedUser = await useTypeORM(UserEntity).save(newUser);
-//       res.status(201).send(savedUser);
-//       // });
-//     }
-//   }
-// );
+        await Person.save(updatedUser);
 
-// controller.get(
-//   "/",
-//   async (res: Response<ObjectLiteral[]>) => {
-//     const users = await useTypeORM(UserEntity).find();
-//     res.send(users);
-//   });
+        return res.send("User updated successfully");
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send("An error occurred while updating the user");
+    }
+});
 
-// controller.get(
-//   "/:id",
-//   async (req: Request, res: Response<ObjectLiteral | ErrorObject>) => {
-//     const { id } = req.params;
+controller.delete("/:id", async (req: Request, res: Response) => {
+    const { id } = req.params;
 
-//     if (!id) {
-//       return res
-//         .status(400)
-//         .send({
-//           message: 'Required parameter "id" is missing!',
-//           statusCode: 400,
-//         });
-//     }
+    try {
+        const user = await Person.findOneBy({ id: parseInt(id) });
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
 
-//     const existingUser = await useTypeORM(UserEntity).findOneBy({ id });
+        await user.remove();
 
-//     if (!existingUser) {
-//       return res
-//         .status(404)
-//         .send({
-//           message: `User with id: ${id} was not found.`,
-//           statusCode: 400,
-//         });
-//     }
+        return res.send("User deleted successfully");
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send("An error occurred while deleting the user");
+    }
+});
 
-//     res.send(existingUser);
-//   }
-// );
-
-// controller.put(
-//   "/:id",
-//   async (req: Request, res: Response<ObjectLiteral | ErrorObject>) => {
-//     const { id } = req.params;
-
-//     if (!id) {
-//       return res
-//         .status(400)
-//         .send({ message: 'Required parameter "id" is missing!' });
-//     }
-
-//     const existingUser = await useTypeORM(UserEntity).findOneBy({ id });
-
-//     if (!existingUser) {
-//       return res
-//         .status(404)
-//         .send({ message: `User with id: ${id} was not found.` });
-//     }
-
-//     const changes: Partial<UserEntity> = req.body;
-//     const userChanges = { ...existingUser, ...changes };
-//     await typeORMDB.manager.transaction(async () => {
-//       const updatedUser = await useTypeORM(UserEntity).save(userChanges);
-//       res.send(updatedUser);
-//     });
-//   }
-// );
-
-// controller.delete(
-//   "/:id",
-//   async (req: Request, res: Response) => {
-//     const { id } = req.params;
-
-//     if (!id) {
-//       return res
-//         .status(400)
-//         .send({ message: 'Required parameter "id" is missing!' });
-//     }
-
-//     const existingUser = await useTypeORM(UserEntity).findOneBy({ id });
-
-//     if (!existingUser) {
-//       return res
-//         .status(404)
-//         .send({ message: `User with id: ${id} was not found.` });
-//     }
-
-//     await typeORMDB.manager.transaction(async () => {
-//       await useTypeORM(UserEntity).remove(existingUser);
-//       res.send({ message: "User removed!" });
-//     });
-//   });
-
-// export default controller;
+export default controller;

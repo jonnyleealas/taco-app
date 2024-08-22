@@ -1,5 +1,5 @@
 import { Express, Request, Response } from 'express';
-import userController2 from '../controllers/userController2';
+import userController2 from '../controllers/userController';
 import authController from '../controllers/authController';
 import homeController from '../controllers/homeController'
 
