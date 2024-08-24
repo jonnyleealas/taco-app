@@ -1,0 +1,25 @@
+/* home.css */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the home container takes at least the full height of the viewport */
+  }
+  
+  .home > header {
+    /* Optional: styling for your header if needed */
+  }
+  
+  .home > main {
+    flex: 1; /* This allows the main content to expand and take up available space */
+  }
+  
+  .home > footer {
+    height: 60px; /* Set a fixed height */
+    background-color: #f8f9fa; /* Example background color */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    padding: 0 20px; /* Optional: Add some horizontal padding */
+  }
+  

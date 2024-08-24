@@ -3,6 +3,7 @@ import Header from './Header/Header';  // Correctly import Header component
 import Main from './Main/Main';        // Correctly import Main component
 import Footer from './Footer/Footer';  // Correctly import Footer component
 
+
 function Home() {
   return (
     <div className="home">
