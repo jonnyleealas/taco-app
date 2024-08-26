@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './login.css';
+import './SignIn.css';
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import icons for showing/hiding password
 
 function Login() {
@@ -65,7 +65,7 @@ function Login() {
 
     return (
         <form onSubmit={onSubmitForm}>
-            <div className="newUserCard">
+            <div>
                 <label>
                     Email
                     <input

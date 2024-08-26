@@ -4,10 +4,10 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import SignInButton from './SignUp/SignInButton/SignInButton';
+import SignInButton from './SignIn/SignInButton/SignInButton';
 import SignUpButton from './SignUp/SignUpButton/SignUpButton';
 import Search from './Search/Search';
-import SignInModal from './SignUp/SignInButton/SignInModal';
+import SignInModal from './SignIn/SignInButton/SignInModal';
 import SignUpModal from './SignUp/SignUpButton/SignUpModal';
 
 function NavScrollExample() {
