@@ -5,7 +5,6 @@ function SignInButton({ variant = "outline-primary", onClick }) {
     <Button
       variant={variant}
       onClick={onClick}
-     
     >
       Sign In
     </Button>

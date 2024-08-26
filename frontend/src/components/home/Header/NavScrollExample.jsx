@@ -4,16 +4,21 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import SignInButton from './SignInButton/SignInButton';
-import SignUpButton from './SignUpButton/SignUpButton';
+import SignInButton from './SignUp/SignInButton/SignInButton';
+import SignUpButton from './SignUp/SignUpButton/SignUpButton';
 import Search from './Search/Search';
-import SignInModal from './SignInButton/SignInModal';
+import SignInModal from './SignUp/SignInButton/SignInModal';
+import SignUpModal from './SignUp/SignUpButton/SignUpModal';
 
 function NavScrollExample() {
   const [showSignInModal, setShowSignInModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
 
   const handleSignInShow = () => setShowSignInModal(true);
   const handleSignInClose = () => setShowSignInModal(false);
+
+  const handleSignUpShow = () => setShowSignUpModal(true);
+  const handleSignUpClose = () => setShowSignUpModal(false);
 
   return (
     <>
@@ -55,7 +60,7 @@ function NavScrollExample() {
               </Nav>
               <div className="d-flex align-items-center">
                 <SignInButton onClick={handleSignInShow} />
-                <SignUpButton />
+                <SignUpButton onClick={handleSignUpShow} />
               </div>
             </div>
           </Navbar.Collapse>
@@ -63,6 +68,7 @@ function NavScrollExample() {
       </Navbar>
 
       <SignInModal show={showSignInModal} handleClose={handleSignInClose} />
+      <SignUpModal show={showSignUpModal} handleClose={handleSignUpClose} />
     </>
   );
 }

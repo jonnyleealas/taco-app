@@ -1,14 +1,4 @@
 /* Form container styling */
-.newUserCard {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px; /* Padding on all sides */
-  width: 400px; /* Fixed width for the form container */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin: auto;
-  margin-top: 50px;
-  box-sizing: border-box; /* Ensure padding is included in width */
-}
 
 /* General label styling */
 label {

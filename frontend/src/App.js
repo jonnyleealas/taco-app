@@ -6,7 +6,7 @@ import ShowUsers from './components/showUsers/ShowUsers';
 // import ShowUser from './components/showUser/showUser';
 import Login from './components/login/Login';
 import Home from './components/home/Home'
-import SignUp from './components/signUp/SignUp'
+import SignUp from './components/home/Header/SignUp/SignUp'
 
 const router = createBrowserRouter([
   {
