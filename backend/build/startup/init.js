@@ -1,4 +1,6 @@
 "use strict";
+// import { Express } from 'express';
+// import typeORMConnect from '../databases/postgres/typeOrm';
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -8,10 +10,7 @@ const appSetup = async (app) => {
     try {
         await (0, typeOrm_1.default)();
         console.log('Databases connected successfully!');
-        const APP_PORT = Number(process.env.APP_PORT) || 3000;
-        app.listen(APP_PORT, () => {
-            console.log(`Server started on port ${APP_PORT}`);
-        });
+        // Note: Do not start the server here; it's handled elsewhere.
     }
     catch (error) {
         console.log('Unable to start the app!');
