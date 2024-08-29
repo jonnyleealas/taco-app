@@ -1,25 +1,11 @@
-// import express from "express";
-// import appSetup from "./startup/init";
-// import routerSetup from "./startup/router";
-// import securitySetup from "./startup/security";
-// import dotenv from "dotenv";
-
-// dotenv.config();
-
-// const app = express();
-
-// void appSetup(app);
-// securitySetup(app, express);
-// routerSetup(app);
-
-import express from 'express';
 import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
 import appSetup from './startup/init';
 import routerSetup from './startup/router';
 import session from 'express-session';
-import passport from 'passport';
+import passport from './startup/passportConfig';
 
-dotenv.config();
 
 const app = express();
 
@@ -27,11 +13,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Configure session middleware
+// Configure session middleware with your secret
 app.use(session({
   secret: process.env.SESSION_SECRET || 'your-secret-key',
   resave: false,
   saveUninitialized: true,
+  cookie: { secure: process.env.NODE_ENV === 'production' }, // Secure cookies in production
 }));
 
 // Initialize Passport and session support

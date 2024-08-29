@@ -2,6 +2,7 @@ import { Express, Request, Response } from 'express';
 import userController2 from '../controllers/userController';
 import authController from '../controllers/authController';
 import homeController from '../controllers/homeController'
+import authControllerGoogle from '../controllers/authControllerGoogle'
 
 const routerSetup = (app: Express) => {
   // Setup a basic route
@@ -17,6 +18,9 @@ const routerSetup = (app: Express) => {
 
   // Home Controller
   app.use('/api/v1/home', homeController)
+  
+  // Google auth controller
+  app.use('/api/v1/auth/google', authControllerGoogle)
 };
 
 export default routerSetup;
