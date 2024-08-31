@@ -110,7 +110,7 @@ controller.get('/google/callback',
   passport.authenticate('google', { failureRedirect: '/login' }), 
   (req: Request, res: Response) => {
     // Successful authentication, redirect home or wherever you want
-    res.redirect('/home');
+    res.redirect('http://localhost:3000');
   }
 );
 

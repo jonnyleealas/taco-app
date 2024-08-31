@@ -19,6 +19,6 @@ const routerSetup = (app) => {
     // Home Controller
     app.use('/api/v1/home', homeController_1.default);
     // Google auth controller
-    app.use('/api/v1/auth/google', authControllerGoogle_1.default);
+    app.use('/api/v1/auth/', authControllerGoogle_1.default);
 };
 exports.default = routerSetup;

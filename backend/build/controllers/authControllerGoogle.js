@@ -93,7 +93,7 @@ controller.get('/google', passport_1.default.authenticate('google', { scope: ['p
 // GET /api/v1/auth/google/callback - Google OAuth callback route
 controller.get('/google/callback', passport_1.default.authenticate('google', { failureRedirect: '/login' }), (req, res) => {
     // Successful authentication, redirect home or wherever you want
-    res.redirect('/home');
+    res.redirect('http://localhost:3000');
 });
 // GET /api/v1/auth/google/failure - Handles Google OAuth failures
 controller.get('/google/failure', (req, res) => {

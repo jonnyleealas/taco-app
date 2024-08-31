@@ -20,7 +20,7 @@ const routerSetup = (app: Express) => {
   app.use('/api/v1/home', homeController)
   
   // Google auth controller
-  app.use('/api/v1/auth/google', authControllerGoogle)
+  app.use('/api/v1/auth/', authControllerGoogle)
 };
 
 export default routerSetup;
