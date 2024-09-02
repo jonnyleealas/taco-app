@@ -64,8 +64,14 @@ function SignInModal({ show, handleClose }) {
         }
     };
 
+    const handleGoogleSignIn = () => {
+        // Trigger Google authentication (you can redirect to your backend endpoint for Google OAuth)
+        window.location.href = 'http://localhost:5000/api/v1/auth/google';
+    };
+
     return (
-        <Modal show={show} onHide={handleClose} centered>
+        <Modal id="signInModal" show={show} onHide={handleClose} centered>
+
             <Modal.Header closeButton>
                 <Modal.Title>Sign In</Modal.Title>
             </Modal.Header>
@@ -109,7 +115,10 @@ function SignInModal({ show, handleClose }) {
                     </div>
                 </form>
             </Modal.Body>
-            <Modal.Footer>
+            <Modal.Footer className='footer-buttons'>
+                <Button className="google-signin-button" variant="primary" onClick={handleGoogleSignIn}>
+                    Sign In with Google
+                </Button>
                 <Button variant="secondary" onClick={handleClose}>
                     Close
                 </Button>

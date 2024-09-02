@@ -1,68 +1,72 @@
-
-/* General label styling */
-label {
-  display: block; /* Make sure each label is on a new line */
-  margin-bottom: 8px; /* Space between label and input */
-  font-size: 16px;
-}
-
-/* General input styling */
-input[type=text], input[type=email], input[type=password], select {
-  width: 100%; /* Take full width of the container */
-  padding: 12px 20px; /* Consistent padding */
-  margin: 8px 0;
-  display: block; /* Make sure inputs are block level */
-  border: 1px solid #ccc;
+/* General button styling */
+/* Specific styling for the Google Sign-In button */
+#signInModal .google-signin-button {
+  width: 100%; /* Full width */
+  padding: 12px 20px;
+  margin-bottom: 8px; /* Space between buttons */
   border-radius: 4px;
-  box-sizing: border-box; /* Ensure padding and border are included in width */
   font-size: 16px;
-}
-
-/* Password container styling */
-.password-container {
-  position: relative;
-}
-
-/* Password toggle button styling */
-.password-toggle {
-  position: absolute;
-  right: 10px; /* Adjust if necessary */
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #959e96;
   cursor: pointer;
-  font-size: 20px;
-  outline: none; /* Remove default button outline */
-}
-
-/* Submit button styling */
-input[type=submit] {
-  width: 100%; /* Take full width of the container */
-  background-color: #4CAF50;
+  box-sizing: border-box;
+  background-color: #4285F4; /* Google blue */
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  box-sizing: border-box; /* Ensure padding is included in width */
+  text-align: center; /* Center the text */
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+/* Retain default styling for the Close button */
+#signInModal .btn-secondary {
+  width: 100%; /* Full width */
+  margin-top: 8px; /* Space above Close button */
+  background-color: #ccc;
+  color: #333;
+  border: none;
 }
 
-/* Error message styling */
+/* Adjust footer layout */
+#signInModal .modal-footer {
+  display: block; /* Ensure buttons stack vertically */
+  padding: 0; /* Remove default padding */
+}
+
+#signInModal .footer-buttons {
+  width: 100%;
+  padding: 12px; /* Add padding to the footer buttons area */
+  box-sizing: border-box;
+}
+
+
+/* Primary button (e.g., Google Sign-In) */
+button.btn-primary {
+  background-color: #4285F4; /* Google blue */
+  color: white;
+  border: none;
+}
+
+button.btn-primary:hover {
+  background-color: #357ae8; /* Slightly darker blue on hover */
+}
+
+/* Secondary button (e.g., Close) */
+button.btn-secondary {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+}
+
+button.btn-secondary:hover {
+  background-color: #bbb; /* Slightly darker gray on hover */
+}
+
+/* Style the message based on success or error */
 p {
-  color: red;
   margin-top: 10px;
 }
 
-/* Focus state for inputs */
-input:focus {
-  outline: none; /* Remove default outline */
-  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Soft green shadow */
+p.success {
+  color: green;
+}
+
+p.error {
+  color: red;
 }
