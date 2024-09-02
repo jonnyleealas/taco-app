@@ -71,59 +71,70 @@ function SignInModal({ show, handleClose }) {
 
     return (
         <Modal id="signInModal" show={show} onHide={handleClose} centered>
-
-            <Modal.Header closeButton>
-                <Modal.Title>Sign In</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <form onSubmit={onSubmitForm}>
-                    <div>
-                        <label>
-                            Email
-                            <input
-                                type="email"
-                                placeholder="Email"
-                                name="email"
-                                value={user.email}
-                                onChange={handleChange}
-                                required
-                            />
-                        </label>
-                        <label>
-                            Password
-                            <div className="password-container">
-                                <input
-                                    type={showPassword ? "text" : "password"} // Toggle between text and password
-                                    placeholder="Password"
-                                    name="password"
-                                    value={user.password}
-                                    onChange={handleChange}
-                                />
-                                <button
-                                    type="button"
-                                    className="password-toggle"
-                                    onClick={handlePasswordToggle}
-                                >
-                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
-                                </button>
-                            </div>
-                        </label>
-
-                        {message && <p style={{ color: message === 'Login successful' ? 'green' : 'red' }}>{message}</p>} {/* Display message */}
-                        <input type="submit" value="Login" />
-                        <div>Don't have an account? <a href="/signup">Sign Up</a></div>
+    <Modal.Header closeButton>
+        <Modal.Title>Sign In</Modal.Title>
+    </Modal.Header>
+    <Modal.Body>
+        <form onSubmit={onSubmitForm}>
+            <div>
+                <label>
+                    Email
+                    <input
+                        type="email"
+                        placeholder="Email"
+                        name="email"
+                        value={user.email}
+                        onChange={handleChange}
+                        required
+                    />
+                </label>
+                <label>
+                    Password
+                    <div className="password-container">
+                        <input
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Password"
+                            name="password"
+                            value={user.password}
+                            onChange={handleChange}
+                        />
+                        <button
+                            type="button"
+                            className="password-toggle"
+                            onClick={handlePasswordToggle}
+                        >
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </button>
                     </div>
-                </form>
-            </Modal.Body>
-            <Modal.Footer className='footer-buttons'>
-                <Button className="google-signin-button" variant="primary" onClick={handleGoogleSignIn}>
-                    Sign In with Google
-                </Button>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-            </Modal.Footer>
-        </Modal>
+                </label>
+                {message && <p style={{ color: message === 'Login successful' ? 'green' : 'red' }}>{message}</p>}
+                <input type="submit" value="Login" />
+                <div>Don't have an account? <a href="/signup">Sign Up</a></div>
+            </div>
+        </form>
+    </Modal.Body>
+    <Modal.Footer className="footer-buttons">
+        <div className="full-width">
+            <button className="gsi-material-button">
+                <div className="gsi-material-button-content-wrapper">
+                    <img
+                        src=".\assets\web_light_sq_ctn@2x.png"
+                        alt="Google"
+                        className="gsi-material-button-icon"
+                    />
+                    <div className="gsi-material-button-contents" onClick={handleGoogleSignIn}>
+                        Sign In with Google
+                    </div>
+                </div>
+            </button>
+        </div>
+        <Button variant="secondary" onClick={handleClose}>
+            Close
+        </Button>
+    </Modal.Footer>
+</Modal>
+
+
     );
 }
 
